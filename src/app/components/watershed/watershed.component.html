@@ -1,0 +1,15 @@
+<div class="dash container-fluid" >
+    <!-- <! <h1 >{{data.name}}</h1> -->
+  <!-- <div class="float-left imageContainer">
+    <img [src]="data.img"  alt="" class="dataimage">
+  
+  </div>   -->
+  <!-- <div class="float-right iframecont" > -->
+    <iframe name="birtFrame" scrolling=no [ngStyle]="{'height':'100%','width':'100%','position':'absolute','overflow':'hidden'}" height="2000" [hidden]="ishide" attr.src = "http://192.168.137.174:8080/birt-viewer/preview?__report=region.rptdesign&region=2" 
+    id="myId" width="100%" frameborder="0" safe></iframe>
+    <iframe name="birtFrame" scrolling=no [ngStyle]="{'height':'100%','width':'100%','position':'absolute','overflow':'hidden'}" [hidden]="!ishide"  
+    id="myId2" width="100%" frameborder="0" safe></iframe>
+  <!-- </div> -->
+  
+  
+</div>

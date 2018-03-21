@@ -1,0 +1,221 @@
+<div class="multicont container">
+    <div class="">
+      <h3>{{name}}</h3>
+      <p>{{descrip}}</p>
+    </div>
+  </div>
+
+
+
+<div class="container" >
+  <div class="unhyde row justify-content-md-center">
+
+    <div class="row" style="width:100%;">
+      <ng-template [ngIf]="data.length == 1">
+        <div class="cont col-sm-12" *ngFor="let d of data; let i = index">
+            <div style="text-align:center;" class="contA">
+                <button type="button" class="close" aria-label="Close" (click)="removeMulti(i)" *ngIf="loggedIn">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                <div class="row justify-content-md-center" style="padding: 0px; margin:0px;">
+                  <div style="width:100%; text-align:center; height:200px !important;">
+                      
+                    <div class="imgCont" [ngStyle]="{'background-image': 'url('+d.img+')'}">                    
+                      <img [attr.src]="d.img" alt="" class="Card image cap imgs" >
+                    </div>
+                        
+                      
+                      <h4>{{d.name}}</h4>
+                    <p style="overflow:hidden" class="cardDesc">{{d.descriptionText}}</p>
+                    <a *ngIf="d.button"  class="btn btn-success" style="margin-top:0px;" [routerLink]="'viewCard/'+d.name">{{d.actLabel}}</a>
+                    
+                  </div>
+                </div>
+                </div>
+        </div>
+      </ng-template>
+      <ng-template [ngIf]="data.length == 2">
+        <div class="cont col-sm-6" *ngFor="let d of data; let i = index">
+            <div style="text-align:center;" class="contA">
+                <button type="button" class="close" aria-label="Close" (click)="removeMulti(i)" *ngIf="loggedIn">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                <div class="row justify-content-md-center" style="padding: 0px; margin:0px;">
+                    
+                  <div style="width:100%; text-align:center; height:250px; !important;">
+                    
+                      <div class="imgCont" [ngStyle]="{'background-image': 'url('+d.img+')'}">                    
+                        <!-- <img [attr.src]="d.img" alt="" class="Card image cap  imgs" > -->
+                      </div>
+                    
+                      <h4>{{d.name}}</h4>
+                      <a *ngIf="d.button"  class="btn btn-success action" [routerLink]="'viewCard/'+d.name">{{d.actLabel}}</a>
+                      <p style="overflow:hidden" class="cardDesc">{{d.descriptionText}}</p>
+                  </div>
+                  
+                </div>
+                  
+                </div>
+        </div>
+      </ng-template>
+      <ng-template style="background-color:black"  [ngIf]="data.length >= 3">
+        <div [@activ]="dictAc[d.name]" class="cont col-lg-3 col-md-4 col-sm-6" *ngFor="let d of data; let i = index">
+          
+          <div  (mouseenter)="enter(d.name)" (mouseleave)="leave(d.name)" [ngStyle]="{'background-image': d.img}" style="text-align:center;background-size:100%;height:200px;" class="contA">
+            <button type="button" class="close" aria-label="Close" (click)="removeMulti(i)" *ngIf="loggedIn" st>
+                <span aria-hidden="true">&times;</span>
+              </button>
+            <div class="row justify-content-md-center" style="padding: 0px; margin:0px;">
+                
+              <div   style="width:100%; text-align:center; height:50% !important;">
+                <div class="imgCont" >                    
+                  <div class="imgCover">
+                    <h4 class="descHead">{{d.name}}</h4>
+                    <!-- <button (click)="tagol(dict[d.name])"> aasd</button>  -->
+                  </div>
+                </div>      
+                  
+                </div>
+                <p [@readyStates]="dict[d.name]"  class="cardDesc">
+                  <b>{{d.name}}</b>
+                  <br>
+                  {{d.descriptionText}}
+                    <br>
+                    <a *ngIf="d.button"  class="btn btn-success" [routerLink]="d.actLink">{{d.actLabel}}</a>
+                  </p>
+                
+            </div>
+              
+            </div>
+        </div>
+      </ng-template>
+    </div>
+    <div class="col col-sm-12" *ngIf="loggedIn">
+        <div class="row">
+          <button data-toggle="modal" [attr.data-target]="'#modalmultiadd' + name" class="btn btn btn-outline-warning" style="height:20%">ADD ELEMENT</button>
+        </div>
+        <div class="row">
+          <button data-toggle="modal" class="btn btn-outline-warning" style="height:20%" (click)="copyData()" [attr.data-target]="'#modalmultiedit' + name">EDIT ELEMENTS</button>
+        </div>
+      </div>
+    
+  </div>
+
+  <button class="hyde btn btn-default" type="button" data-toggle="collapse" [attr.data-target]="'#multi'+name" aria-expanded="false" aria-controls="collapseExample">
+      {{name}}
+  </button>
+    <!-- <div class="hyde collapse " [attr.id]="'multi'+name">
+      
+      <div class="card card-block" *ngFor="let d of data">
+        <button type="button" class="close" aria-label="Close" (click)="removeMulti(i)" *ngIf="loggedIn">
+          <span aria-hidden="true">&times;</span>
+        </button>  
+        <a class="btn btn-default" [attr.href]="d.actLink" >{{d.descriptionText}}</a>
+      </div>
+      <div class="card card-block" >
+          <a class="btn btn btn-outline-success" >ADD ELEMENT</a>
+          <button data-toggle="modal" class="btn btn btn-outline-warning" style="height:20%" (click)="copyData()" [attr.data-target]="'#modalmultiedit' + name">EDIT ELEMENTS</button>
+      </div>
+
+    </div> -->
+
+</div>
+
+<div class="modal fade" [attr.id]="'modalmultiedit' + name" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" [attr.id]="'modal' + name + 'label'">Edit {{multilinkTitle}}</h5>
+            <br>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Title</span>
+                    <input type="text" class="form-control" [(ngModel)]="fakeTitle" #ctrl="ngModel" aria-describedby="basic-addon1">
+                
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Description</span>
+                <input type="text" class="form-control" [(ngModel)]="fakeDesc" #ctrl="ngModel" aria-describedby="basic-addon1">
+            </div>
+            <br><br><br>
+            <div *ngFor="let d of fakeData">
+              <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Description</span>
+                  <input type="text" class="form-control" [(ngModel)]="d.name" #ctrl="ngModel" aria-describedby="basic-addon1">
+                </div>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Description</span>
+                <input type="text" class="form-control" [(ngModel)]="d.descriptionText" #ctrl="ngModel" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Link</span>
+                <input [disabled]="!d.button" type="text" class="form-control" [(ngModel)]="d.actLabel" #ctrl="ngModel" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">
+                <input  type="checkbox" [(ngModel)]="d.button">
+                    Button Label</span>
+                <input [disabled]="!d.button" type="text" class="form-control" [(ngModel)]="d.actLink" #ctrl="ngModel" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Image Link</span>
+                  <input type="text" class="form-control" [(ngModel)]="d.img" #ctrl="ngModel" aria-describedby="basic-addon1">
+                </div>
+              <br><br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="save()" data-dismiss="modal">Save changes</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" [attr.id]="'modalmultiadd' + name" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" [attr.id]="'modal' + name + 'label'">Add {{multilinkTitle}} element</h5>
+                <br>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Name</span>
+                      <input type="text" class="form-control" [(ngModel)]="dataToAdd.name" #ctrl="ngModel" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Description</span>
+                    <input type="text" class="form-control" [(ngModel)]="dataToAdd.descriptionText" #ctrl="ngModel" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Link</span>
+                    <input [disabled]="!dataToAdd.button" type="text" class="form-control" [(ngModel)]="dataToAdd.actLabel" #ctrl="ngModel" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">
+                      <input type="checkbox" [(ngModel)]="dataToAdd.button">
+                      Button Label
+                    </span>
+                    <input [disabled]="!dataToAdd.button" type="text" class="form-control" [(ngModel)]="dataToAdd.actLink" #ctrl="ngModel" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Img</span>
+                      <input type="text" class="form-control" [(ngModel)]="dataToAdd.img" #ctrl="ngModel" aria-describedby="basic-addon1">
+                  </div>
+                  <br><br>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="saveAdd()" data-dismiss="modal">Save changes</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>

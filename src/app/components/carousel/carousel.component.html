@@ -1,0 +1,163 @@
+
+<div  [attr.id]="name" class="asd carousel slide" data-ride="carousel" fxLayout="row" fxShow="false" fxShow.gt-sm> 
+    <ol class="carousel-indicators" *ngIf="data.length>1" >
+      <li  *ngFor="let zx of data; let i = index;" style="height:20px; width:20px; flex:none; border:1px solid #A4B1A6" [attr.data-target]="'#' + name" [attr.data-slide-to]="i" class="active rounded-circle"></li>
+      <button data-toggle="modal" [attr.data-target]="'#modaladd' + name" class="btn btn-success itemButtons">
+        +</button>
+      <button  data-toggle="modal" [attr.data-target]="'#modalother' + name" class="btn btn-success itemButtons" (click)="editDescTitle()">
+        e</button>
+    
+    </ol>
+    <ol class="carousel-indicators" *ngIf="data.length<=1" >
+      <button data-toggle="modal" [attr.data-target]="'#modaladd' + name" class="btn btn-success itemButtons">
+          +</button>
+      <button  data-toggle="modal" [attr.data-target]="'#modalother' + name" class="btn btn-success itemButtons" (click)="editDescTitle()">
+              e</button>
+    </ol>
+  <div [ngStyle]="{'height': h}" class="carousel-inner" role="listbox" >
+      <div *ngFor="let item of data; let i=index" [attr.class]="item.class+' carItem'">
+          <div class="cover"></div>          
+        <div  class="carouselImage">
+          <img class="d-block img-fluid carouselImageItem" [attr.src]="item.img" alt="First slide">
+            <div class="hyde">              
+              <h3 class="carousel-text">{{item.header}}</h3>
+              <p class="carousel-text">{{item.desc}}</p>
+              <a class="btn btn-primary" *ngIf="item.actbutton" [attr.href]="item.actlink" >Go to link</a>
+              <button *ngIf="loggedIn"  data-toggle="modal" [attr.data-target]="'#modaledit' + name" class="btn btn-success" (click)="editCarouselElement(item,i)">Edit</button>
+            </div>
+          </div>
+          <div class="texts carousel-caption d-none d-md-block">
+            <div class="textsInside"></div>
+            <h3 class="carousel-text carousel-text-head">{{item.header}}</h3>
+            <p class="carousel-text carousel-text-desc">{{item.desc}}</p>
+            <a class="btn btn-outline-success" *ngIf="item.actbutton" [attr.href]="item.actlink" style="color:white" >Go to link</a>
+            <a *ngIf="hasItems && loggedIn" data-toggle="modal" [attr.data-target]="'#modaledit' + name" class="btn btn-outline-success" (click)="editCarouselElement(item,i)">Edit</a>
+            <a *ngIf="hasItems && loggedIn" class="btn btn-outline-success" (click)="deleteItem(i)">Delete</a>
+            
+          </div>
+      </div>
+  </div>
+  <!-- <a class="carousel-control-prev" [attr.href]="'#' + name" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" [attr.href]="'#' + name" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
+</div>
+
+<div class="desccont container" [hidden]="!isTnDVisible">
+    <div class="jumbotron">
+      <h2>{{title}}</h2>
+      <p>{{desc}}</p>
+    </div>
+  </div>
+
+
+<!-- Button trigger modal -->
+
+<!-- edit Modal -->
+<div class="modal fade" [attr.id]="'modaledit' + name" tabindex="-1" role="dialog" [attr.aria-labelledby]="'#modal' + name + 'label'" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [attr.id]="'modal' + name + 'label'">Edit item</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">header</span>
+          <input type="text" class="form-control" [(ngModel)]="dataToEdit.header" #ctrl="ngModel" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Link to image</span>
+          <input type="text" class="form-control" [(ngModel)]="dataToEdit.img" #ctrl="ngModel" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Description</span>
+            <input type="text" class="form-control" [(ngModel)]="dataToEdit.desc" #ctrl="ngModel" aria-describedby="basic-addon1">
+          </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><input type="checkbox" [(ngModel)]="dataToEdit.actbutton" /> Activate Action Button</span>
+            <input type="text" class="form-control" [(ngModel)]="dataToEdit.actlink" [disabled]="!dataToEdit.actbutton" #ctrl="ngModel" aria-describedby="basic-addon1">
+            
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveEdit()" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="modal fade" [attr.id]="'modalother' + name" tabindex="-1" role="dialog" [attr.aria-labelledby]="'#modal' + name + 'label'" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [attr.id]="'modal' + name + 'label'">Edit Carousel</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Title</span>
+          <input type="text" class="form-control" [(ngModel)]="dummyData.title" #ctrl="ngModel" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Description</span>
+          <input type="text" class="form-control" [(ngModel)]="dummyData.desc" #ctrl="ngModel" aria-describedby="basic-addon1">
+        </div>
+        <input type="checkbox" [(ngModel)]="dummyData.isTnDVisible" /> Make these Visible?
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveDescTitle()" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal add -->
+
+  <div class="modal fade" [attr.id]="'modaladd' + name" tabindex="-1" role="dialog" [attr.aria-labelledby]="'#modal' + name + 'label'" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" [attr.id]="'modal' + name + 'label'">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">header</span>
+                <input type="text" class="form-control" [(ngModel)]="dataToAdd.header" #ctrl="ngModel" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Link to image</span>
+                <input type="text" class="form-control" [(ngModel)]="dataToAdd.img" #ctrl="ngModel" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Description</span>
+                  <input type="text" class="form-control" [(ngModel)]="dataToAdd.desc" #ctrl="ngModel" aria-describedby="basic-addon1">
+                </div>
+              <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Activate Action Button</span>
+                  <input type="text" class="form-control" [(ngModel)]="dataToAdd.actlink" [disabled]="!dataToAdd.actbutton" #ctrl="ngModel" aria-describedby="basic-addon1">
+                  <input type="checkbox" [(ngModel)]="dataToAdd.actbutton" />
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="addCarouselElement()" data-dismiss="modal">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      

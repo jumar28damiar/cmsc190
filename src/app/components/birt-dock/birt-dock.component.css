@@ -1,0 +1,39 @@
+.dDown{
+    margin-left:20px;
+    padding-top:20px;
+}
+
+.dashCont{
+    background-color:rgba(37, 31, 1, 0.99);
+    /* height:450px; */
+    padding:20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.imgCont{
+    border: 2px solid black;
+    height: 600px;
+    width: auto;
+}
+
+.basicInfo{
+    color:rgba(255, 255, 255, 0.67);
+    padding-left: 30px;
+}
+.shed_header{
+    color:white;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+}
+
+.mySelect{
+    width: 200px;
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    border-radius: 50px;
+}
+
+.iframeHolder {
+    background:url(/assets/loading.gif) center center no-repeat;  
+}

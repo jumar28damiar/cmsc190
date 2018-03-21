@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+@media (min-width: 768px){
+    .hyde {
+        visibility: hidden !important;
+        position:absolute;
+    }
+
+    
+}
+
+@media (max-width: 767px) {
+    .unhyde {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    body {
+        width:100% !important;
+    }
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+body{
+    scroll-behavior: smooth !important;
+    font-family: "Fira GFW Sans", "Fira Sans", Georgia, serif !important;
+}
+
+footer{
+    margin-top:30px;
+}
+
+html, body { height: 100% }

@@ -1,0 +1,142 @@
+<nav [ngStyle]="{'background-color':bgColor,'height': hayt+'px','color':bgColor}" [@topState]="topStateNow" class="navbar navbar-toggleable-md bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-brand float-left" style="height:100%;width:300px;">
+      <a routerLink="">
+        <!-- <button type="button" data-toggle="modal" [attr.data-target]="'#navBarIcon'" class="close"  (click)="changeI()">
+          <span class="changeIcon "aria-hidden="true">change</span>
+        </button> -->
+        <img [attr.src]="icon" alt="LOGO" (click)="purint()" class="logo" >
+        <span class="change btn btn-outline-default" data-toggle="modal" [attr.data-target]="'#navBarIcon'" (click)="changeI()">CHANGE</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse float-right " id="navbarNavDropdown">
+      <ul class="navbar-nav nab">
+        {{a}}
+         <li class="nav-item" [hidden]="!window">
+            <a class="nav-link" (click)="getDat()">Settings</a>
+        </li>
+        <li *ngFor="let app of navItems; let i=index" [attr.class]="app.type=='dropdown'? 'nav-item dropdown' : 'nav-item'">
+          <ng-template [ngIf]="app.type=='simple'" >
+              <a class="nav-link"  (click)="getDat()" [attr.href]="app.link">{{app.label}}</a>
+          </ng-template>
+          <ng-template [ngIf]="app.type=='dropdown'" >
+              <a class="nav-link" [attr.id]="app.label+'navbarDropdownMenuLink'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{app.label}}
+                </a>
+                <div class="dropdown-menu" [attr.aria-labelledby]="app.label+'navbarDropdownMenuLink'">
+                  <a *ngFor="let x of app.subItems" class="dropdown-item" [attr.href]="x.link">{{x.label}}</a>
+                </div>
+          </ng-template>
+        </li>
+        <!--
+        <li class="nav-item">
+          <a class="nav-link" >Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  (click)="getDat()">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >Products</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Applications
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" >Action</a>
+            <a class="dropdown-item" >Another action</a>
+            <a class="dropdown-item" >Something else here</a>
+          </div>
+        </li> 
+      -->
+        <li>
+          <form class="form-inline" style="height: 100%">
+            <div class="input-group" [ngStyle]="{'height':hayt*0.40+'px'}" >
+              <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+              <span class="input-group-addon">
+                  <span class="fa fa-search"></span>                                
+              </span>
+            </div>
+          </form>
+        </li>
+        
+      </ul>
+      <div class="login">
+        <a *ngIf="!window; else elseBlock" class="btn btn-sm btn-xs btn-success" data-toggle="modal" [attr.data-target]="'#login'">LOGIN</a>
+        <ng-template #elseBlock>
+          <a class="btn btn-sm btn-xs btn-success" (click)="logout()">Logout</a>
+        </ng-template>
+      </div>
+     
+    </div>
+    
+   
+  </nav>
+
+  
+
+  <div class="modal fade" [attr.id]="'navBarIcon'" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" [attr.id]="'modal' + name + 'label'">Change icon</h5>
+              <br>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Link</span>
+                  <input type="text" class="form-control" [(ngModel)]="fakeIco" #ctrl="ngModel" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Upload</span>
+                  <!-- <input type="text" class="form-control" [(ngModel)]="dataToAdd.actLabel" #ctrl="ngModel" aria-describedby="basic-addon1"> -->
+                  /TODO
+                </div>
+                <br><br>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" (click)="changeIco()" data-dismiss="modal">Save changes</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+<div class="modal fade" [attr.id]="'login'" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" [attr.id]="'modal' + name + 'label'">Login</h5>
+          <br>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" ng-submit="login()">
+            <div class="input">
+              <label for="username">Username</label>
+              <input type="text" name="username" class="form-control" [(ngModel)]="username" aria-describedby="basic-addon1">
+
+              <label for="username">Password</label>
+              <input type="password" name="username" class="form-control" [(ngModel)]="password" aria-describedby="basic-addon1">
+
+              
+            </div>
+          </form>
+            <br><br>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" ng-submit="login()" (click)="login()" >Login</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        

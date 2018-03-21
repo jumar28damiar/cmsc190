@@ -1,0 +1,52 @@
+div{
+    background-color: white;
+}
+
+body{
+    background-color: white;
+}
+
+.dash{
+    width: 100% !important;
+    z-index: 50;
+    min-height: 730px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(230, 247, 237, 0.88);
+    padding: 0px;
+}
+
+.dataimage{
+    width: 100%;
+    background-color: transparent;
+}
+
+.imageContainer{
+    width:40%;
+    height: 75%;
+    overflow: hidden;
+    float:left !important;
+}
+
+h1, p{
+    background-color: transparent;
+    color: white;
+}
+
+.iframecont{
+    background-color:transparent;
+    width:50%;
+    min-height: 500px;
+    float:right !important;
+}
+
+iframe{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    margin: auto ;
+    margin-left: 0px;
+    left: 0;
+    border:none;
+}

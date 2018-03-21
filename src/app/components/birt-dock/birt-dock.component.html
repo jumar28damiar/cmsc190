@@ -1,0 +1,77 @@
+<!-- <div style="display:inline-block">
+  <div *ngFor="let app of regions;let i = index" style="float:left">
+    <ng-template [ngIf]="app[1] == curr">
+      <button  (click)="change(app[1])"  class="btn btn-warning" disabled [ngStyle]="{'width':'60px !important'}">{{app[0]}}</button>
+    </ng-template>
+    <ng-template [ngIf]="app[1] != curr">
+        <button  (click)="change(app[1])"  class="btn btn-info" [ngStyle]="{'width':'60px !important'}">{{app[0]}}</button>
+      </ng-template>
+    <!-- <button [ngIf]="app[1]==(i)" (click)="change(app[1])"  class="btn btn-warning" disabled="true" [ngStyle]="{'width':'65px !important'}">{{app[0]}}</button> -->
+    
+  <!-- </div> -->
+<!-- </div> -->
+
+<div class="dashCont"> 
+    <form class="form-inline" class="dDown">
+        <select class="mySelect custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" (change)="onChange($event.target.value)" style="width:200px;">
+          <option selected *ngIf=(firstVisit)>Choose Watershed</option>
+          <option *ngFor="let app of regions;let i = index" [attr.value]="app[1]" (click)="redir(app[1])">{{app[0]}}</option>
+        </select>
+      </form>
+  <div class="float-left">
+    <h1 class="shed_header">
+        {{name}} Watershed
+    </h1>  
+    <img class="imgCont" [attr.src]="'/assets/'+name.toLowerCase()+'.jpg'" onerror="this.onerror=null;this.src='/assets/default.jpg';"  alt="">
+  </div>
+  
+  <div class="float-left basicInfo">
+    <div 
+      style=" height:400px !important;" 
+      class = "iframeHolder" 
+      id="detailId" 
+      onload="removeBg('detailId')"
+      >
+      <iframe id="aydi" src="http://127.0.0.1:8080/birt-viewer/preview?__report=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer%5Csub.rptdesign&__format=html&__svg=true&__locale=en_PH&__timezone=CTT&__masterpage=true&__rtl=false&__cubememsize=10&__resourceFolder=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer&visib=false&__emitterid=org.eclipse.birt.report.engine.emitter.html&-233951418&subShedName=none&watershedName=Balogo" class="embed-responsive-item"  scrolling='no'  style="width:500px; height:1000px" frameBorder="0" safe></iframe>
+    </div>
+  </div>
+</div>  
+
+<div 
+  class="embed-responsive embed-responsive-21by9 iframeHolder"
+  id="contentHolder"
+  style=
+    "background-color: white !important;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin:0px;
+    padding:0px;
+    overflow:hidden;
+    height:1600px">
+  <!-- <iframe id="ayditu" class="embed-responsive-item"  scrolling='no' allowfullscreen ></iframe> -->
+  <!-- <body style="margin:0px;padding:0px;overflow:hidden"> -->
+    <iframe 
+      id="ayditu" 
+      frameborder="0"
+      style=
+        "overflow:hidden;
+        overflow-x:hidden;
+        overflow-y:hidden;
+        height:100%;
+        width:100%;
+        position:absolute;
+        top:0px;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        display:block;
+        position:absolute"  
+      scrolling='no' 
+      height="100%" 
+      width="100%"
+      src=""
+      (load)="someFunction()"
+      name=""></iframe>
+<!-- </body> -->
+</div>

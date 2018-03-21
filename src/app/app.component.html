@@ -1,0 +1,94 @@
+<ng-sidebar-container style="height:100vh;" >
+    <h1>hello</h1>
+
+    <!-- A sidebar -->
+    <ng-sidebar 
+      [(opened)]="_opened"
+      mode="over"
+      autoCollapseWidth=1000
+      [dockedSize]="'500px'"
+      [showBackdrop]="'true'"
+      style="background-color:white">
+      <div class="sidebar">
+          <h2 class="heder">SETTINGS</h2>          
+            <div style="padding-left:5%">
+              <button class="btn btn-xs-default" (click)="toggle=!toggle;lastColor=fakeColor"
+              #ignoredButton>Change Navigation and footer colors</button>
+              <br>
+              <input #ignoredInput [(colorPicker)]="fakeColor"
+              [(cpToggle)]="toggle"
+              [style.background]="fakeColor"
+              [cpIgnoredElements]="[ignoredButton, ignoredInput]" [attr.value]="color" style="width:50px" class="colorInput" disabled/>
+       
+            
+            <br>
+            <span >
+              <h4 style="margin-top:20px; padding-top: 10px;border-top: 2px solid rgba(50,50,50,0.3)">Navbar Height</h4>
+            </span>
+            <p style="margin:20px;">
+              
+              <button class="btn btn-warning selections" [ngStyle]="{'background-color':color }" (click)="changeSelected(small)">{{small}}px</button>
+              <button class="btn btn-warning selections" [ngStyle]="{'background-color':color }" (click)="changeSelected(medium)">{{medium}}px</button>
+              <button class="btn btn-warning selections" [ngStyle]="{'background-color':color }" (click)="changeSelected(large)">{{large}}px</button>
+              <button class="btn btn-warning selections" [ngStyle]="{'background-color':color }" (click)="changeSelected(custom)">{{custom}}px</button>
+              Custom
+              <input class="form-control" style="float:left;margin-top:5px; width: 20%" placeholder="height in px" [(ngModel)]="custom" type="number" max="300" min="75">
+              <br>
+              <button disabled class="btn btn-danger" [ngStyle]="{'height':fakeHeight + 'px'}" style="float:left; width:100px;">{{fakeHeight}}px</button>
+              
+              
+            </p>
+          </div>
+          <div class="closeSide">
+            <p>
+              <button class="btn btn-default"  (click)="save()">SAVE</button>          
+              <button class="btn btn-default"  (click)="_toggleSidebar()">CLOSE</button>
+            </p>            
+          </div>          
+      </div>
+    </ng-sidebar>
+    
+    <!-- Page content -->
+    <div ng-sidebar-content>
+    
+      <!-- <a routerLink="watershed" class="nav-link">Water</a> -->
+<app-navbar [bgColor]="'white'" [loggedIn]="loggedIn" [hayt]="selected" (openSideBar)="openSideBar($event)" (logg) ="logg($event)"  ></app-navbar>
+<router-outlet></router-outlet>
+
+<!-- <app-carousel [namae] = "'asd1'" [datae] = "data"></app-carousel>
+<app-multilinks [inputs]="datalinks1"></app-multilinks>
+<app-carousel [namae] = "'asd2'" [datae] = "data2"></app-carousel>
+<app-multilinks [inputs]="datalinks2"></app-multilinks> -->
+
+<footer style="padding: 30px;margin:0px;" [ngStyle]="{'background-color':'#34495E'}">
+  <div class="container">
+      <a class="navbar-brand" href="#">
+          <button type="button" class="close" (click)="removeMulti(i)">
+          </button>
+          <img src="/assets/watshedlogo2.png" alt="LOGO" (click)="purint()" style="width:auto !important; height:50px !important" class="logo">
+        </a>
+        {{title}}
+    @{{year}}
+    <div class="row justify-content-md-center">
+        
+          <div class="col" style="font-size:15px;">
+              The Monitoring and Detection of Ecosystems Changes for Enhancing Resilience and Adaptation in the Philippines (MODECERA) is a DOST and DOST-PCAARRD funded program which aims to set up long-term monitoring system in eight selected ecosystems to enhance resilience and adaptation of agriculture and natural resources sector through promotion of science and technology based management and policy decisions.
+            </div>
+          
+          
+    
+        <!-- <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Applications
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div> -->
+      </div>
+    </div>
+
+
+</footer>
+</div>
+</ng-sidebar-container>

@@ -1,0 +1,122 @@
+  <div *ngFor="let app of homeData; let i=index">
+    <ng-template [ngIf]="app.type == 1">
+      <app-carousel [(namae)] = "app.id" [(loggedIn)]="loggedIn" (onInputChange)="printo($event)"></app-carousel>
+    </ng-template>
+    <ng-template [ngIf]="app.type == 2">
+      <app-multilinks [(namae)]="app.id" [(loggedIn)]="loggedIn" (onInputChange)="printo($event)"></app-multilinks>
+    </ng-template>
+    <ng-template [ngIf]="app.type == 3">
+      <app-watersheddock></app-watersheddock>
+    </ng-template>
+  </div>
+
+
+  <button type="button" data-toggle="modal" *ngIf="loggedIn" [attr.data-target]="'#editData'" class="btn btn-success" style="position:fixed;right:50px;bottom:50px;border-radius:45px; height:50px;width:50px;"  (click)="printData()">
+      <span class="close" style="font-weight:bolder">+</span></button>
+  <div class="modal fade" [attr.id]="'editData'" tabindex="-1" role="dialog"  aria-hidden="true" >
+      <div class="modal-dialog" role="document">
+          <div class="modal-content" >
+            <div class="modal-header">
+              <h5 class="modal-title" [attr.id]="'modal' + name + 'label'">Add {{multilinkTitle}} element</h5>
+              <br>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <ng-template [ngIf]="mode==1">
+                <table class="table">
+                    <thead class="thead-inverse">
+                      <tr>
+                        <th>Title/Name</th>
+                        <th>Desciption</th>
+                        <th>Type</th>
+                        <th># of items</th>
+                        <th>delete</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let item of compData; let i = index;">
+                        <td>{{item.name? item.name : item.title}}</td>
+                        <td style="overflow:hidden">{{item.desc? item.desc : item.descrip}}</td>
+                        <td>{{item.name? "Cards" : "Carousel"}}</td>
+                        <td>{{item.data.length}}</td>
+                        <td>
+                          <button class="btnclose btn btn-outline-danger" (click)="delete(i)">x</button>
+                        </td>
+                    </tbody>
+                    <!-- <div *ngFor="let app of compData; let i=index">
+                    
+                    <ng-template [ngIf]="app.type == 1">
+                      <div class="card compDataItem">
+                        <h3> Carousel </h3>
+                        <p> <span class="input-group-addon" id="basic-addon1">Title</span>
+                          <input class="form-control" [(ngModel)] = "data.title">
+                        </p>
+                        <p> <span class="input-group-addon" id="basic-addon1">Description</span>
+                          <input class="form-control" [(ngModel)] = "data.desc">
+                        </p>
+                        <p> <span class="input-group-addon" id="basic-addon1">Id</span>
+                          <input class="form-control" [(ngModel)] = "data.id">
+                        </p>
+                        <p> <span class="input-group-addon" id="basic-addon1">Number of items</span>
+                          <input class="form-control" [(ngModel)] = "data.data.length">
+                        </p>
+                      </div>
+                    </ng-template>
+                    <ng-template [ngIf]="app.type == 2">
+                      {{app.data.name}}
+                      {{app.data.descrip}}
+                      {{app.data.data.length}}
+                    </ng-template> 
+                    
+                  </div> -->
+                </table>
+                <!-- <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Description</span>
+                  <input type="text" class="form-control" [(ngModel)]="dataToAdd.descriptionText" #ctrl="ngModel" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Link</span>
+                  <input type="text" class="form-control" [(ngModel)]="dataToAdd.actLabel" #ctrl="ngModel" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Button Label</span>
+                  <input type="text" class="form-control" [(ngModel)]="dataToAdd.actLink" #ctrl="ngModel" aria-describedby="basic-addon1">
+                </div>
+                <br><br> -->
+              </ng-template>
+              <!-- carousel -->
+              <ng-template [ngIf]="mode==2">
+                <h2>Add Carousel</h2>
+                  <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Title</span>
+                      <input type="text" class="form-control" [(ngModel)]="ntitle" #ctrl="ngModel" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Description</span>
+                      <input type="text" class="form-control" [(ngModel)]="ndesc" #ctrl="ngModel" aria-describedby="basic-addon1">
+                  </div>
+                  <button class="btn btn-success" (click)="add(1)">ADD</button>
+              </ng-template>
+              <!-- multilink -->
+              <ng-template [ngIf]="mode==3">
+                <h2>Add Cards Container</h2>
+                  <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Title</span>
+                      <input type="text" class="form-control" [(ngModel)]="ntitle" #ctrl="ngModel" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Description</span>
+                      <input type="text" class="form-control" [(ngModel)]="ndesc" #ctrl="ngModel" aria-describedby="basic-addon1">
+                  </div>
+                  <button class="btn btn-success" (click)="add(2)">ADD</button>
+              </ng-template>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" (click)="reset();" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" (click)="mode = 2">Add Carousel Base</button>
+                  <button type="button" class="btn btn-primary" (click)="mode = 3">Add Container Base</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>

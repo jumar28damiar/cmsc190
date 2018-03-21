@@ -1,0 +1,19 @@
+----------------------------------------------------------------
+Thu Mar 08 12:36:56 CST 2018:
+Booting Derby (version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546)) instance a816c00e-0162-03e5-d436-0000070045b0 
+on database directory classpath:BirtSample in READ ONLY mode with class loader WebappClassLoader
+  context: /birt-viewer
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+java.net.URLClassLoader@105068a
+. 
+Loaded from file:/C:/apache-tomcat-7.0.82/webapps/birt-viewer/WEB-INF/lib/org.apache.derby_10.11.1.1_v201605202053.jar.
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_74-b02
+user.dir=C:\Users\jumar28damiar\Documents\sp\server
+os.name=Windows 10
+os.arch=x86
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

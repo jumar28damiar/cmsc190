@@ -1,0 +1,17 @@
+.modal-dialog{
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+@media(max-width:1199px){
+    .modal-content{
+        width: 700px;
+    }
+}
+
+@media(min-width:1200px){
+    .modal-content{
+        width: 1000px;
+    }
+}

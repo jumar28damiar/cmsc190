@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+.jumbotron {
+    height: 20% !important;
+    padding: 20px;
+    margin: 0px;
+}
+
+.container {
+    font-size: 20px;
+}
+
+.compDataItem:hover{
+    border: 1px solid black;
+}
+
+.compDataItem {
+    padding:5px;
+    border:1px solid white;
+}
+
+.btnclose {
+    height:30px;
+    width:30px;
+    padding:0px;
+    border-radius: 45px;
+    color: grey;
+    text-align: center;
+    font-weight: bolder;
+    
+}
+
+.logo{
+    width: 50% !important;
+}
+
+div{
+    font-family: 'Arial', sans-serif;
+    font-stretch: ultra-expanded;
+}
+
+.heder{
+    font-stretch: ultra-expanded;
+    background-color: rgba(39, 51, 85, 0.79);
+    color: white;
+    font-family: calibri;
+    font-weight: bold;
+    font-size: 45px !important;
+}
+
+.sidebar{
+    height:100%;
+    background-color: rgba(255, 255, 255, 0.93);
+    width:400px;
+}
+
+.closeSide{
+    position: absolute;
+    bottom:5%;
+    right: 5%;
+}
+
+.selections{
+    width:70px;
+    padding: 0px;
+}
+
+.colorInput{
+    border: none;
+    border-radius: 5px;
+    width:35% !important;
+}

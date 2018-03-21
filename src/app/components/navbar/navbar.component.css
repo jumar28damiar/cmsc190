@@ -1,0 +1,98 @@
+nav {
+    /* background-color: #568D68; */
+    width: 100%;
+    top: 0px;
+    z-index: 100;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 1rem !important;
+    border-bottom: 1px solid rgba(139, 139, 139, 0.81);
+    box-shadow: 5px 5px 5px #888888;
+    /* position: sticky; */
+}
+
+
+
+.logo, .navbar-brand{
+    height: 100%;
+    /* width: 120px; */
+    overflow: hidden;
+    z-index: 10;
+    
+}
+
+.nab{
+    margin-left: auto;
+    color: #3B3B3B !important;
+    
+}
+.navbar-brand{
+    height: 100%;
+    width: inherit;
+}
+
+.nav-link{
+    color: #3B3B3B;
+}
+
+.nav-item{
+    float:right !important;
+    /* text-shadow: 1px 1px black; */
+
+    
+}
+
+.login{
+    margin: 2px;
+}
+
+@media(max-width:768px){
+    .changeIcon{
+        visibility: hidden;
+        position: absolute;
+    }
+
+    nav{
+        height: inherit !important;
+        width: 100% !important;
+    }
+}
+
+.changeIcon{
+     background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(transparent));
+    background-image: -webkit-linear-gradient(top,white , transparent);
+    background-image: -moz-linear-gradient(top,white , transparent);
+    background-image: linear-gradient(to bottom,white , transparent);;
+    z-index: 1000px;
+    top: 20px;
+    color:transparent;
+    background-color: transparent;
+}
+
+.change{
+    position:absolute;
+    bottom:20px;
+    left:10px;
+    font-weight: bold;
+    padding: 0px;
+    color:transparent;
+    border-color:transparent !important;
+}
+
+.change:hover{
+    background-color: #D3D1D1;
+    opacity: 0.8;
+    color:#3B3B3B;
+}
+
+
+a{
+    color: #3B3B3B;
+}
+
+.nav-item:hover{
+    font-weight: bold;
+}
+
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+
