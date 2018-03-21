@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">120</property>
+    <parameters>
+        <scalar-parameter name="watershedName" id="6">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="waterSheds" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://localhost:3306/world</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cm9vdA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="totalLandCover" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Label</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Label</text-property>
+                    <text-property name="heading">Label</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Percentage</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Percentage</text-property>
+                    <text-property name="heading">Percentage</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_4</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_5</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_6</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_7</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Label</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Percentage</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">waterSheds</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Label</property>
+                    <property name="nativeName">Label</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Percentage</property>
+                    <property name="nativeName">Percentage</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[	select "Forest" Label,ROUND((avg(PercentForest)*100),2) "Percentage" from sub_sheds where watershed = ?
+	union all
+	select "Cultivated" Label,ROUND((avg(PercentCultivated)*100),2) "Percentage" from sub_sheds where watershed = ?
+	union all
+	select "Built up" Label,ROUND((avg(PercentBuilt_up)*100),2) "Percentage" from sub_sheds where watershed = ?
+	union all
+	select "Grassland" Label,ROUND((avg(PercentGrassland)*100),2) "Percentage" from sub_sheds where watershed = ?
+	union all
+	select "Brush Shrubs" Label,ROUND((avg(PercentBrush_Shrubs)*100),2) "Percentage" from sub_sheds where watershed = ?
+	union all
+	select "Bare Open" Label,ROUND((avg(PercentBare_Open)*100),2) "Percentage" from sub_sheds where watershed = ?
+	union all
+	select "Water" Label,ROUND((avg(PercentWater)*100),2) "Percentage" from sub_sheds where watershed = ?;]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="groupedByStreamOrder" id="71">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Location</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Location</text-property>
+                    <text-property name="heading">Location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Watershed</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Watershed</text-property>
+                    <text-property name="heading">Watershed</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Subwatershed</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Subwatershed</text-property>
+                    <text-property name="heading">Subwatershed</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Stream_Order</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Stream_Order</text-property>
+                    <text-property name="heading">Stream_Order</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Total_Number_of_streams</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Total_Number_of_streams</text-property>
+                    <text-property name="heading">Total_Number_of_streams</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Total_Stream_Length_km</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Total_Stream_Length_km</text-property>
+                    <text-property name="heading">Total_Stream_Length_km</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Mean_Stream_length_</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Mean_Stream_length_</text-property>
+                    <text-property name="heading">Mean_Stream_length_</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Perimeter_km</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Perimeter_km</text-property>
+                    <text-property name="heading">Perimeter_km</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Mean_Bifurcation_ratio</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Mean_Bifurcation_ratio</text-property>
+                    <text-property name="heading">Mean_Bifurcation_ratio</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Basin_Length_km</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Basin_Length_km</text-property>
+                    <text-property name="heading">Basin_Length_km</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Rho_Coefficient</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Rho_Coefficient</text-property>
+                    <text-property name="heading">Rho_Coefficient</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">count(Subwatershed)</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">count(Subwatershed)</text-property>
+                    <text-property name="heading">count(Subwatershed)</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Watershed</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Subwatershed</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Stream_Order</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Total_Number_of_streams</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Total_Stream_Length_km</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Mean_Stream_length_</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Perimeter_km</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Mean_Bifurcation_ratio</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Basin_Length_km</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">Rho_Coefficient</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">count(Subwatershed)</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">waterSheds</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Location</property>
+                    <property name="nativeName">Location</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Watershed</property>
+                    <property name="nativeName">Watershed</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Subwatershed</property>
+                    <property name="nativeName">Subwatershed</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Stream_Order</property>
+                    <property name="nativeName">Stream_Order</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Total_Number_of_streams</property>
+                    <property name="nativeName">Total_Number_of_streams</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Total_Stream_Length_km</property>
+                    <property name="nativeName">Total_Stream_Length_km</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Mean_Stream_length_</property>
+                    <property name="nativeName">Mean_Stream_length_</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">Perimeter_km</property>
+                    <property name="nativeName">Perimeter_km</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">Mean_Bifurcation_ratio</property>
+                    <property name="nativeName">Mean_Bifurcation_ratio</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">Basin_Length_km</property>
+                    <property name="nativeName">Basin_Length_km</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">Rho_Coefficient</property>
+                    <property name="nativeName">Rho_Coefficient</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">count(Subwatershed)</property>
+                    <property name="nativeName">count(Subwatershed)</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select sub_sheds.Location,sub_sheds.Watershed,sub_sheds.Subwatershed,sub_sheds.Stream_Order,sub_sheds.Total_Number_of_streams,sub_sheds.Total_Stream_Length_km,sub_sheds.Mean_Stream_length_,sub_sheds.Perimeter_km,sub_sheds.Mean_Bifurcation_ratio,sub_sheds.Basin_Length_km,sub_sheds.Rho_Coefficient,count(Subwatershed)
+from sub_sheds
+where watershed = ?
+group by sub_sheds.Location,sub_sheds.Watershed,sub_sheds.Stream_Order]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Location</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Location</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Location</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Watershed</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Watershed</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Watershed</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Subwatershed</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Subwatershed</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Subwatershed</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Stream_Order</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>11</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Stream_Order</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Stream_Order</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Total_Number_of_streams</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>11</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Total_Number_of_streams</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Total_Number_of_streams</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Total_Stream_Length_km</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>11</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Total_Stream_Length_km</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Total_Stream_Length_km</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Mean_Stream_length_</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>11</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Mean_Stream_length_</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Mean_Stream_length_</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Perimeter_km</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>11</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Perimeter_km</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Perimeter_km</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Mean_Bifurcation_ratio</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>11</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Mean_Bifurcation_ratio</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Mean_Bifurcation_ratio</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Basin_Length_km</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>11</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Basin_Length_km</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Basin_Length_km</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Rho_Coefficient</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>11</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Rho_Coefficient</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Rho_Coefficient</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="headSet" id="143">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Label</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Label</text-property>
+                    <text-property name="heading">Label</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Value</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Value</text-property>
+                    <text-property name="heading">Value</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_4</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_5</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_6</property>
+                    <property name="paramName">watershedName</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Label</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Value</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">waterSheds</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Label</property>
+                    <property name="nativeName">Label</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Value</property>
+                    <property name="nativeName">Value</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "Location" Label,Location "Value" from sub_sheds where watershed =? group by watershed
+	union all
+	select "Number of Sub-watersheds" Label,COUNT(subwatershed) "Value" from sub_sheds where watershed =? group by watershed
+	union all
+	select "Number of Streams" Label,SUM(total_number_of_streams) "Value" from sub_sheds where watershed =? group by watershed
+	union all
+	select "Total Stream Length (in Km)" Label,ROUND(SUM(total_stream_length_km),4) "Value" from sub_sheds where watershed =? group by watershed
+	union all
+	select "Total Basin length (in Km)" Label,ROUND(SUM(Basin_Length_km),4) "Value" from sub_sheds where watershed =? group by watershed
+	union all
+	select "Total Area Covered (in Km2)" Label,ROUND(SUM(Area_km2),4) "Value" from sub_sheds where watershed =? group by watershed;]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="232">
+            <property name="dimensions">
+                <tabular-dimension name="Label" id="233">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="234">
+                            <property name="levels">
+                                <tabular-level name="Location" id="235">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">Location</property>
+                                </tabular-level>
+                                <tabular-level name="numSheds" id="237">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">numSheds</property>
+                                </tabular-level>
+                                <tabular-level name="numStreams" id="238">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">numStreams</property>
+                                </tabular-level>
+                                <tabular-level name="sumBasinLength" id="239">
+                                    <property name="dataType">float</property>
+                                    <property name="columnName">sumBasinLength</property>
+                                </tabular-level>
+                                <tabular-level name="sumStreamLength" id="240">
+                                    <property name="dataType">float</property>
+                                    <property name="columnName">sumStreamLength</property>
+                                </tabular-level>
+                                <tabular-level name="totalArea" id="241">
+                                    <property name="dataType">float</property>
+                                    <property name="columnName">totalArea</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="dataSet">headSet</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="NewStyle" id="68">
+            <property name="fontFamily">"Arial Rounded MT Bold"</property>
+            <property name="fontStyle">normal</property>
+            <property name="color">#FFFFFF</property>
+            <property name="textLineThrough">none</property>
+            <property name="textUnderline">none</property>
+        </style>
+        <style name="NewStyle1" id="184">
+            <property name="backgroundColor">#C0C0C0</property>
+            <property name="fontWeight">bolder</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="HeadSt" id="185">
+            <property name="fontFamily">"Arial Rounded MT Bold"</property>
+            <property name="color">#FFFFFF</property>
+        </style>
+        <style name="NewStyle2" id="186">
+            <property name="backgroundColor">#593802</property>
+        </style>
+        <style name="NewStyle3" id="188">
+            <property name="fontFamily">"Arial Rounded MT Bold"</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+        </style>
+        <style name="NewStyle4" id="189">
+            <property name="fontFamily">"Arial Rounded MT Bold"</property>
+        </style>
+        <style name="NewStyle5" id="375">
+            <property name="fontFamily">"Calibri"</property>
+            <property name="fontSize">30pt</property>
+            <property name="color">#A7FE8D</property>
+            <property name="borderBottomColor">#C0C0C0</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="marginTop">0pt</property>
+            <property name="marginBottom">15pt</property>
+        </style>
+        <style name="NewStyle6" id="376">
+            <property name="fontFamily">"Microsoft JhengHei UI"</property>
+            <property name="fontSize">12pt</property>
+            <property name="marginTop">10pt</property>
+        </style>
+        <style name="NewStyle7" id="377">
+            <property name="color">#DBDBDB</property>
+            <property name="marginTop">20pt</property>
+            <property name="marginBottom">20pt</property>
+        </style>
+        <style name="NewStyle8" id="379">
+            <property name="marginTop">10pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="rightMargin">0.4in</property>
+            <property name="height">11in</property>
+            <property name="width">11in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="359">
+            <property name="dataSet">headSet</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Label</property>
+                    <text-property name="displayName">Label</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Label"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Value</property>
+                    <text-property name="displayName">Value</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Value"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="373"/>
+            <column id="374"/>
+            <header>
+                <row id="360">
+                    <cell id="361"/>
+                    <cell id="363">
+                        <label id="378">
+                            <property name="style">NewStyle8</property>
+                            <text-property name="text">                          </text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="365">
+                    <property name="style">NewStyle7</property>
+                    <cell id="366"/>
+                    <cell id="368">
+                        <data id="367">
+                            <property name="style">NewStyle6</property>
+                            <property name="resultSetColumn">Label</property>
+                        </data>
+                        <data id="369">
+                            <property name="style">NewStyle5</property>
+                            <property name="resultSetColumn">Value</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="370">
+                    <cell id="371"/>
+                    <cell id="372"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="Something">
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>
