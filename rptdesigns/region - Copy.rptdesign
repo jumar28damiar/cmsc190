@@ -1,0 +1,3521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">38</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">38</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">38</property>
+        </structure>
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">85</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">85</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">85</property>
+        </structure>
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">165</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">165</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">165</property>
+        </structure>
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">167</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">167</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">167</property>
+        </structure>
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">169</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">169</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">169</property>
+        </structure>
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">166</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">166</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">166</property>
+        </structure>
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">168</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">168</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">168</property>
+        </structure>
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">341</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">341</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">341</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="region" id="37">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="world_data" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://localhost:3306/world</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cm9vdA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="tree_cover_totals_per_region" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">regien</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">regien</text-property>
+                    <text-property name="heading">regien</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sum(tree_cover.less10)</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">sum(tree_cover.less10)</text-property>
+                    <text-property name="heading">sum(tree_cover.less10)</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">regien</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">sum(tree_cover.less10)</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">regien</property>
+                    <property name="nativeName">regien</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">sum(tree_cover.less10)</property>
+                    <property name="nativeName">sum(tree_cover.less10)</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select tree_cover.regien,sum(tree_cover.less10)
+from tree_cover
+group by tree_cover.regien]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>regien</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>regien</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>regien</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>sum(tree_cover.less10)</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>32</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>sum(tree_cover.less10)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>sum(tree_cover.less10)</design:label>
+            <design:formattingHints>
+              <design:displaySize>33</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="total_treeCover" id="38">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">TOTAL TREE COVER:</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">TOTAL TREE COVER:</text-property>
+                    <text-property name="heading">TOTAL TREE COVER:</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NO. OF WATERSHEDS:</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">NO. OF WATERSHEDS:</text-property>
+                    <text-property name="heading">NO. OF WATERSHEDS:</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">WATERSHEDS LAND AREA(HECTARES)</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">WATERSHEDS LAND AREA(HECTARES)</text-property>
+                    <text-property name="heading">WATERSHEDS LAND AREA(HECTARES)</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TOTAL TREE COVER:</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NO. OF WATERSHEDS:</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">WATERSHEDS LAND AREA(HECTARES)</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TOTAL TREE COVER:</property>
+                    <property name="nativeName">TOTAL TREE COVER:</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NO. OF WATERSHEDS:</property>
+                    <property name="nativeName">NO. OF WATERSHEDS:</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">WATERSHEDS LAND AREA(HECTARES)</property>
+                    <property name="nativeName">WATERSHEDS LAND AREA(HECTARES)</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select sum(tree_cover.less10) "TOTAL TREE COVER:", (select count(*) from watersheds where regien = ?) "NO. OF WATERSHEDS:", ROUND((select sum(hectares) from watersheds where regien = ?),4) "WATERSHEDS LAND AREA(HECTARES)" from tree_cover,watersheds where tree_cover.regien = ?
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>sum(tree_cover.less10)</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>32</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>sum(tree_cover.less10)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>sum(tree_cover.less10)</design:label>
+            <design:formattingHints>
+              <design:displaySize>33</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="treecovervs" id="84">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Area Cover</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Area Cover</text-property>
+                    <text-property name="heading">Area Cover</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Region</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Region</text-property>
+                    <text-property name="heading">Region</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Area Cover</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Region</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Area Cover</property>
+                    <property name="nativeName">Area Cover</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Region</property>
+                    <property name="nativeName">Region</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select round(sum(less10),4) "Area Cover",  "Region" ": Selected" from tree_cover where regien = ?
+	union all
+	select round(sum(less10),4) "Area Cover",  "Region" ": Others" from tree_cover where regien <> ?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CURRENT</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>32</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CURRENT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CURRENT</design:label>
+            <design:formattingHints>
+              <design:displaySize>33</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>OTHER REGIONS</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>32</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>OTHER REGIONS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>OTHER REGIONS</design:label>
+            <design:formattingHints>
+              <design:displaySize>33</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="hectaresVs" id="85">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Area Cover</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Area Cover</text-property>
+                    <text-property name="heading">Area Cover</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Region</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Region</text-property>
+                    <text-property name="heading">Region</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Area Cover</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Region</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Area Cover</property>
+                    <property name="nativeName">Area Cover</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Region</property>
+                    <property name="nativeName">Region</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select round(sum(hectares),4) "Area Cover",  "Region" ": Selected" from watersheds where regien = ?
+	union all
+	select round(sum(hectares),4) "Area Cover",  "Region" ": Others" from watersheds where regien <> ?
+	]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CURRENT</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>21</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CURRENT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CURRENT</design:label>
+            <design:formattingHints>
+              <design:displaySize>21</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>OTHER REGIONS</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>21</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>OTHER REGIONS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>OTHER REGIONS</design:label>
+            <design:formattingHints>
+              <design:displaySize>21</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.excel.dataSet" name="regions" id="161">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">region</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">region</text-property>
+                    <text-property name="heading">region</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <text-property name="heading">name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pop</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">pop</text-property>
+                    <text-property name="heading">pop</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">area(km)</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">area(km)</text-property>
+                    <text-property name="heading">area(km)</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">area(mi)</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">area(mi)</text-property>
+                    <text-property name="heading">area(mi)</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">density(km)</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">density(km)</text-property>
+                    <text-property name="heading">density(km)</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">density(mi)</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">density(mi)</text-property>
+                    <text-property name="heading">density(mi)</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cities</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cities</text-property>
+                    <text-property name="heading">cities</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">munic</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">munic</text-property>
+                    <text-property name="heading">munic</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bgy</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Bgy</text-property>
+                    <text-property name="heading">Bgy</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">region</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">pop</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">area(km)</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">area(mi)</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">density(km)</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">density(mi)</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">cities</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">munic</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Bgy</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">region</property>
+                    <property name="nativeName">region</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">pop</property>
+                    <property name="nativeName">pop</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">area(km)</property>
+                    <property name="nativeName">area(km)</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">area(mi)</property>
+                    <property name="nativeName">area(mi)</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">density(km)</property>
+                    <property name="nativeName">density(km)</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">density(mi)</property>
+                    <property name="nativeName">density(mi)</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">cities</property>
+                    <property name="nativeName">cities</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">munic</property>
+                    <property name="nativeName">munic</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">Bgy</property>
+                    <property name="nativeName">Bgy</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "region", "name", "pop", "area(km)", "area(mi)", "density(km)", "density(mi)", "cities", "munic", "Bgy" from "/C:/apache-tomcat-7.0.82/webapps/birt-viewer/sumdata.xlsx" : {"region","region",STRING;"name","name",STRING;"pop","pop",STRING;"area(km)","area(km)",STRING;"area(mi)","area(mi)",STRING;"density(km)","density(km)",STRING;"density(mi)","density(mi)",STRING;"cities","cities",STRING;"munic","munic",STRING;"Bgy","Bgy",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>region</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>region</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>region</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>pop</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>pop</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>pop</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>area(km)</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>area(km)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>area(km)</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>area(mi)</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>area(mi)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>area(mi)</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>density(km)</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>density(km)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>density(km)</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>density(mi)</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>density(mi)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>density(mi)</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cities</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>cities</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cities</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>munic</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>munic</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>munic</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Bgy</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>Bgy</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Bgy</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <property name="WORKSHEETS">Sheet1</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="regs" id="164">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">region</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">region</text-property>
+                    <text-property name="heading">region</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">region</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">region</property>
+                    <property name="nativeName">region</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select regions.region
+from regions
+where regions.region = ?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>region</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>region</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>region</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="landArea" id="165">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">areaInkm</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">areaInkm</text-property>
+                    <text-property name="heading">areaInkm</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">areaInkm</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">areaInkm</property>
+                    <property name="nativeName">areaInkm</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select regions.areaInkm
+from regions
+where regions.region = ?]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="citis" id="166">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cities</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cities</text-property>
+                    <text-property name="heading">cities</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cities</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cities</property>
+                    <property name="nativeName">cities</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select regions.cities
+from regions
+where regions.region = ?]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="brgy" id="169">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Bgy</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Bgy</text-property>
+                    <text-property name="heading">Bgy</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Bgy</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Bgy</property>
+                    <property name="nativeName">Bgy</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select regions.Bgy
+from regions
+where regions.region = ?]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="name" id="168">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">region</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">region</text-property>
+                    <text-property name="heading">region</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <text-property name="heading">name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pop</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">pop</text-property>
+                    <text-property name="heading">pop</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">areaInkm</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">areaInkm</text-property>
+                    <text-property name="heading">areaInkm</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">areaInmi</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">areaInmi</text-property>
+                    <text-property name="heading">areaInmi</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">densityInkm</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">densityInkm</text-property>
+                    <text-property name="heading">densityInkm</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">densityInmi</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">densityInmi</text-property>
+                    <text-property name="heading">densityInmi</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cities</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cities</text-property>
+                    <text-property name="heading">cities</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">munic</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">munic</text-property>
+                    <text-property name="heading">munic</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bgy</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Bgy</text-property>
+                    <text-property name="heading">Bgy</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">region</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">pop</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">areaInkm</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">areaInmi</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">densityInkm</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">densityInmi</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">cities</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">munic</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Bgy</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">region</property>
+                    <property name="nativeName">region</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">pop</property>
+                    <property name="nativeName">pop</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">areaInkm</property>
+                    <property name="nativeName">areaInkm</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">areaInmi</property>
+                    <property name="nativeName">areaInmi</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">densityInkm</property>
+                    <property name="nativeName">densityInkm</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">densityInmi</property>
+                    <property name="nativeName">densityInmi</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">cities</property>
+                    <property name="nativeName">cities</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">munic</property>
+                    <property name="nativeName">munic</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">Bgy</property>
+                    <property name="nativeName">Bgy</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select regions.region,regions.name,regions.pop,regions.areaInkm,regions.areaInmi,regions.densityInkm,regions.densityInmi,regions.cities,regions.munic,regions.Bgy
+from regions
+where regions.region = "r2"]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="munic" id="167">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">munic</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">munic</text-property>
+                    <text-property name="heading">munic</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">munic</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">munic</property>
+                    <property name="nativeName">munic</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select regions.munic
+from regions
+where regions.region = ?]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="watersh" id="341">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <text-property name="heading">name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">hectares</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">hectares</text-property>
+                    <text-property name="heading">hectares</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">hectares</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">hectares</property>
+                    <property name="nativeName">hectares</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select watersheds.name,watersheds.hectares
+from watersheds
+where watersheds.regien = ?
+order by watersheds.hectares]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>hectares</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>hectares</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>hectares</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="prov" id="462">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">province</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">province</text-property>
+                    <text-property name="heading">province</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">less10</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">less10</text-property>
+                    <text-property name="heading">less10</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">province</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">less10</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">world_data</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">province</property>
+                    <property name="nativeName">province</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">less10</property>
+                    <property name="nativeName">less10</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select tree_cover.province,tree_cover.less10
+from tree_cover
+where tree_cover.regien = ?
+order by tree_cover.less10]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="textasd" id="83">
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+        </style>
+        <style name="NewStyle" id="117">
+            <property name="backgroundColor">#808080</property>
+            <property name="fontFamily">"Calibri Light"</property>
+            <property name="fontSize">x-large</property>
+            <property name="borderTopStyle">none</property>
+            <property name="textAlign">left</property>
+            <property name="verticalAlign">bottom</property>
+        </style>
+        <style name="NewStyle1" id="119">
+            <property name="fontFamily">"Calibri Light"</property>
+            <property name="borderBottomStyle">none</property>
+            <property name="borderLeftStyle">none</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderTopStyle">none</property>
+        </style>
+        <style name="NewStyle2" id="120">
+            <property name="fontFamily">"Calibri Light"</property>
+            <property name="fontSize">30pt</property>
+            <property name="fontWeight">900</property>
+            <property name="color">#000040</property>
+            <property name="borderBottomColor">#80FF00</property>
+            <property name="borderBottomStyle">dotted</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="textAlign">left</property>
+        </style>
+        <style name="Tituru" id="121">
+            <property name="fontFamily">"Arial CE"</property>
+            <property name="fontSize">35pt</property>
+            <property name="fontWeight">100</property>
+            <property name="fontStyle">normal</property>
+            <property name="color">#2F2F2F</property>
+        </style>
+        <style name="NewStyle3" id="153"/>
+        <style name="NewStyle4" id="234">
+            <property name="paddingLeft">10pt</property>
+            <property name="paddingRight">10pt</property>
+        </style>
+        <style name="NewStyle5" id="235">
+            <property name="fontFamily">"Arial CYR"</property>
+            <property name="fontSize">21pt</property>
+            <property name="color">#FFFFFF</property>
+        </style>
+        <style name="NewStyle6" id="461">
+            <property name="fontFamily">"Arial Rounded MT Bold"</property>
+            <property name="fontSize">x-large</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="NewStyle7" id="482">
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="paddingTop">15pt</property>
+        </style>
+        <style name="NewStyle8" id="494">
+            <property name="paddingLeft">30pt</property>
+        </style>
+        <style name="NewStyle9" id="495">
+            <property name="fontFamily">"Arial TUR"</property>
+            <property name="fontSize">15pt</property>
+            <property name="borderBottomStyle">outset</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="marginTop">10pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="leftMargin">0.5in</property>
+            <property name="bottomMargin">5.783333333333333in</property>
+            <property name="rightMargin">0in</property>
+            <property name="height">2in</property>
+            <property name="width">1266px</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="496">
+            <property name="width">13.008333333333333in</property>
+            <column id="497">
+                <property name="width">0.8833333333333333in</property>
+            </column>
+            <column id="498">
+                <property name="width">12.125in</property>
+            </column>
+            <row id="499">
+                <cell id="500"/>
+                <cell id="501">
+                    <text-data id="479">
+                        <property name="style">Tituru</property>
+                        <expression name="valueExpr">"Watershed in Region " + params["region"].value</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                    <extended-item extensionName="Chart" id="503">
+                        <xml-property name="xmlRepresentation"><![CDATA[<model:ChartWithAxes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attribute="http://www.birt.eclipse.org/ChartModelAttribute" xmlns:data="http://www.birt.eclipse.org/ChartModelData" xmlns:layout="http://www.birt.eclipse.org/ChartModelLayout" xmlns:model="http://www.birt.eclipse.org/ChartModel" xmlns:type="http://www.birt.eclipse.org/ChartModelType">
+  <Version>2.6.1</Version>
+  <Type>Bar Chart</Type>
+  <SubType>Side-by-side</SubType>
+  <Block>
+    <Children xsi:type="layout:TitleBlock">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>true</Visible>
+      <Label>
+        <Caption>
+          <Value>Watershed Composition</Value>
+          <Font>
+            <Size>16.0</Size>
+            <Bold>true</Bold>
+            <Alignment>
+              <horizontalAlignment>Center</horizontalAlignment>
+              <verticalAlignment>Center</verticalAlignment>
+            </Alignment>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>true</Visible>
+      </Label>
+    </Children>
+    <Children xsi:type="layout:Plot">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>true</Visible>
+      <HorizontalSpacing>1</HorizontalSpacing>
+      <VerticalSpacing>5</VerticalSpacing>
+      <ClientArea>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>0</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>0.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>0.0</Right>
+        </Insets>
+      </ClientArea>
+    </Children>
+    <Children xsi:type="layout:Legend">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>true</Visible>
+      <ClientArea>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>0</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>2.0</Top>
+          <Left>2.0</Left>
+          <Bottom>2.0</Bottom>
+          <Right>2.0</Right>
+        </Insets>
+      </ClientArea>
+      <Text>
+        <Value></Value>
+        <Font>
+          <Alignment/>
+        </Font>
+      </Text>
+      <Orientation>Vertical</Orientation>
+      <Direction>Top_Bottom</Direction>
+      <Separator>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>true</Visible>
+      </Separator>
+      <Position>Right</Position>
+      <ItemType>Series</ItemType>
+      <Title>
+        <Caption>
+          <Value></Value>
+          <Font>
+            <Alignment/>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>false</Visible>
+      </Title>
+      <TitlePosition>Above</TitlePosition>
+    </Children>
+    <Bounds>
+      <Left>0.0</Left>
+      <Top>0.0</Top>
+      <Width>869.4</Width>
+      <Height>434.7</Height>
+    </Bounds>
+    <Insets>
+      <Top>3.0</Top>
+      <Left>3.0</Left>
+      <Bottom>3.0</Bottom>
+      <Right>3.0</Right>
+    </Insets>
+    <Row>-1</Row>
+    <Column>-1</Column>
+    <Rowspan>-1</Rowspan>
+    <Columnspan>-1</Columnspan>
+    <Outline>
+      <Style>Solid</Style>
+      <Thickness>1</Thickness>
+      <Color>
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>0</Green>
+        <Blue>0</Blue>
+      </Color>
+      <Visible>false</Visible>
+    </Outline>
+    <Visible>true</Visible>
+  </Block>
+  <Dimension>Two_Dimensional</Dimension>
+  <Units>Points</Units>
+  <SeriesThickness>10.0</SeriesThickness>
+  <ExtendedProperties>
+    <Name>enable.area.alt</Name>
+    <Value>false</Value>
+  </ExtendedProperties>
+  <SampleData>
+    <BaseSampleData>
+      <DataSetRepresentation>'A','B','C','D','E'</DataSetRepresentation>
+    </BaseSampleData>
+    <OrthogonalSampleData>
+      <DataSetRepresentation>6,4,12,8,10</DataSetRepresentation>
+      <SeriesDefinitionIndex>0</SeriesDefinitionIndex>
+    </OrthogonalSampleData>
+  </SampleData>
+  <Interactivity/>
+  <EmptyMessage>
+    <Caption>
+      <Value>This chart contains no data.</Value>
+      <Font>
+        <Alignment>
+          <horizontalAlignment>Center</horizontalAlignment>
+          <verticalAlignment>Center</verticalAlignment>
+        </Alignment>
+      </Font>
+    </Caption>
+    <Background xsi:type="attribute:ColorDefinition">
+      <Transparency>64</Transparency>
+      <Red>127</Red>
+      <Green>127</Green>
+      <Blue>127</Blue>
+    </Background>
+    <Outline>
+      <Color>
+        <Transparency>128</Transparency>
+        <Red>127</Red>
+        <Green>127</Green>
+        <Blue>127</Blue>
+      </Color>
+      <Visible>true</Visible>
+    </Outline>
+    <Insets>
+      <Top>10.0</Top>
+      <Left>10.0</Left>
+      <Bottom>10.0</Bottom>
+      <Right>10.0</Right>
+    </Insets>
+    <Visible>false</Visible>
+  </EmptyMessage>
+  <Axes>
+    <Type>Text</Type>
+    <Title>
+      <Caption>
+        <Value>X-Axis Title</Value>
+        <Font>
+          <Size>14.0</Size>
+          <Bold>true</Bold>
+          <Alignment>
+            <horizontalAlignment>Center</horizontalAlignment>
+            <verticalAlignment>Center</verticalAlignment>
+          </Alignment>
+        </Font>
+      </Caption>
+      <Background xsi:type="attribute:ColorDefinition">
+        <Transparency>0</Transparency>
+        <Red>255</Red>
+        <Green>255</Green>
+        <Blue>255</Blue>
+      </Background>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+      </Outline>
+      <Insets>
+        <Top>0.0</Top>
+        <Left>2.0</Left>
+        <Bottom>0.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Visible>false</Visible>
+    </Title>
+    <TitlePosition>Below</TitlePosition>
+    <AssociatedAxes>
+      <Type>Linear</Type>
+      <Title>
+        <Caption>
+          <Value>Y-Axis Title</Value>
+          <Font>
+            <Size>14.0</Size>
+            <Bold>true</Bold>
+            <Alignment>
+              <horizontalAlignment>Center</horizontalAlignment>
+              <verticalAlignment>Center</verticalAlignment>
+            </Alignment>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>false</Visible>
+      </Title>
+      <TitlePosition>Left</TitlePosition>
+      <SeriesDefinitions>
+        <Query>
+          <Definition>row[&quot;name&quot;]</Definition>
+          <Grouping>
+            <GroupType>Text</GroupType>
+          </Grouping>
+        </Query>
+        <SeriesPalette>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>80</Red>
+            <Green>166</Green>
+            <Blue>218</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>242</Red>
+            <Green>88</Green>
+            <Blue>106</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>232</Red>
+            <Green>172</Green>
+            <Blue>57</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>255</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>64</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>170</Red>
+            <Green>85</Green>
+            <Blue>85</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>192</Red>
+            <Green>192</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>192</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>7</Red>
+            <Green>146</Green>
+            <Blue>94</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>128</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>0</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>64</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>80</Red>
+            <Green>240</Green>
+            <Blue>120</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>64</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>0</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>0</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>64</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>0</Blue>
+          </Entries>
+        </SeriesPalette>
+        <Series xsi:type="type:BarSeries">
+          <Visible>true</Visible>
+          <Label>
+            <Caption>
+              <Value></Value>
+              <Font>
+                <Alignment/>
+              </Font>
+            </Caption>
+            <Background xsi:type="attribute:ColorDefinition">
+              <Transparency>0</Transparency>
+              <Red>255</Red>
+              <Green>255</Green>
+              <Blue>255</Blue>
+            </Background>
+            <Outline>
+              <Style>Solid</Style>
+              <Thickness>1</Thickness>
+              <Color>
+                <Transparency>255</Transparency>
+                <Red>0</Red>
+                <Green>0</Green>
+                <Blue>0</Blue>
+              </Color>
+              <Visible>false</Visible>
+            </Outline>
+            <Insets>
+              <Top>0.0</Top>
+              <Left>2.0</Left>
+              <Bottom>0.0</Bottom>
+              <Right>3.0</Right>
+            </Insets>
+            <Visible>false</Visible>
+          </Label>
+          <DataDefinition>
+            <Definition>row[&quot;hectares&quot;]</Definition>
+            <Grouping>
+              <GroupType>Text</GroupType>
+              <AggregateExpression>Sum</AggregateExpression>
+            </Grouping>
+          </DataDefinition>
+          <SeriesIdentifier>Series 1</SeriesIdentifier>
+          <DataPoint>
+            <Components>
+              <Type>Orthogonal_Value</Type>
+            </Components>
+            <Separator>, </Separator>
+          </DataPoint>
+          <LabelPosition>Outside</LabelPosition>
+          <Stacked>false</Stacked>
+          <Triggers>
+            <Condition>onmouseover</Condition>
+            <Action>
+              <Type>Show_Tooltip</Type>
+              <Value xsi:type="attribute:TooltipValue">
+                <Text></Text>
+                <Delay>200</Delay>
+              </Value>
+            </Action>
+          </Triggers>
+          <CurveFitting>
+            <LineAttributes>
+              <Style>Solid</Style>
+              <Thickness>1</Thickness>
+              <Color>
+                <Transparency>255</Transparency>
+                <Red>0</Red>
+                <Green>0</Green>
+                <Blue>0</Blue>
+              </Color>
+              <Visible>true</Visible>
+            </LineAttributes>
+            <Label>
+              <Caption>
+                <Value></Value>
+                <Font>
+                  <Alignment/>
+                </Font>
+              </Caption>
+              <Background xsi:type="attribute:ColorDefinition">
+                <Transparency>0</Transparency>
+                <Red>255</Red>
+                <Green>255</Green>
+                <Blue>255</Blue>
+              </Background>
+              <Outline>
+                <Style>Solid</Style>
+                <Thickness>1</Thickness>
+                <Color>
+                  <Transparency>255</Transparency>
+                  <Red>0</Red>
+                  <Green>0</Green>
+                  <Blue>0</Blue>
+                </Color>
+                <Visible>false</Visible>
+              </Outline>
+              <Insets>
+                <Top>0.0</Top>
+                <Left>2.0</Left>
+                <Bottom>0.0</Bottom>
+                <Right>3.0</Right>
+              </Insets>
+              <Visible>false</Visible>
+            </Label>
+            <LabelAnchor>North</LabelAnchor>
+          </CurveFitting>
+          <Riser>Rectangle</Riser>
+        </Series>
+        <Grouping>
+          <GroupType>Text</GroupType>
+          <AggregateExpression>Sum</AggregateExpression>
+        </Grouping>
+      </SeriesDefinitions>
+      <Orientation>Vertical</Orientation>
+      <LineAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>true</Visible>
+      </LineAttributes>
+      <Label>
+        <Caption>
+          <Value></Value>
+          <Font>
+            <Alignment/>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>true</Visible>
+      </Label>
+      <LabelPosition>Left</LabelPosition>
+      <MajorGrid>
+        <LineAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>196</Red>
+            <Green>196</Green>
+            <Blue>196</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </LineAttributes>
+        <TickStyle>Across</TickStyle>
+        <TickAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>196</Red>
+            <Green>196</Green>
+            <Blue>196</Blue>
+          </Color>
+          <Visible>true</Visible>
+        </TickAttributes>
+      </MajorGrid>
+      <MinorGrid>
+        <LineAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>225</Red>
+            <Green>225</Green>
+            <Blue>225</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </LineAttributes>
+        <TickStyle>Across</TickStyle>
+        <TickAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>225</Red>
+            <Green>225</Green>
+            <Blue>225</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </TickAttributes>
+      </MinorGrid>
+      <Scale>
+        <MinorGridsPerUnit>5</MinorGridsPerUnit>
+        <AutoExpand>true</AutoExpand>
+      </Scale>
+      <Origin>
+        <Type>Min</Type>
+        <Value xsi:type="data:NumberDataElement">
+          <Value>0.0</Value>
+        </Value>
+      </Origin>
+      <PrimaryAxis>true</PrimaryAxis>
+      <Percent>false</Percent>
+    </AssociatedAxes>
+    <SeriesDefinitions>
+      <Query>
+        <Definition></Definition>
+      </Query>
+      <SeriesPalette>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>80</Red>
+          <Green>166</Green>
+          <Blue>218</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>242</Red>
+          <Green>88</Green>
+          <Blue>106</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>232</Red>
+          <Green>172</Green>
+          <Blue>57</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>255</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>64</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>170</Red>
+          <Green>85</Green>
+          <Blue>85</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>192</Red>
+          <Green>192</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>192</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>7</Red>
+          <Green>146</Green>
+          <Blue>94</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>128</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>0</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>64</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>80</Red>
+          <Green>240</Green>
+          <Blue>120</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>64</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>0</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>0</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>64</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>0</Blue>
+        </Entries>
+      </SeriesPalette>
+      <Series>
+        <Visible>true</Visible>
+        <Label>
+          <Caption>
+            <Value></Value>
+            <Font>
+              <Alignment/>
+            </Font>
+          </Caption>
+          <Background xsi:type="attribute:ColorDefinition">
+            <Transparency>0</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Background>
+          <Outline>
+            <Style>Solid</Style>
+            <Thickness>1</Thickness>
+            <Color>
+              <Transparency>255</Transparency>
+              <Red>0</Red>
+              <Green>0</Green>
+              <Blue>0</Blue>
+            </Color>
+            <Visible>false</Visible>
+          </Outline>
+          <Insets>
+            <Top>0.0</Top>
+            <Left>2.0</Left>
+            <Bottom>0.0</Bottom>
+            <Right>3.0</Right>
+          </Insets>
+          <Visible>false</Visible>
+        </Label>
+        <DataDefinition>
+          <Definition>row[&quot;name&quot;]</Definition>
+        </DataDefinition>
+        <SeriesIdentifier></SeriesIdentifier>
+        <DataPoint>
+          <Components>
+            <Type>Orthogonal_Value</Type>
+          </Components>
+          <Separator>, </Separator>
+        </DataPoint>
+        <LabelPosition>Outside</LabelPosition>
+        <Stacked>false</Stacked>
+      </Series>
+      <Grouping>
+        <Enabled>true</Enabled>
+        <GroupType>Text</GroupType>
+        <AggregateExpression>Sum</AggregateExpression>
+      </Grouping>
+    </SeriesDefinitions>
+    <Orientation>Horizontal</Orientation>
+    <LineAttributes>
+      <Style>Solid</Style>
+      <Thickness>1</Thickness>
+      <Color>
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>0</Green>
+        <Blue>0</Blue>
+      </Color>
+      <Visible>true</Visible>
+    </LineAttributes>
+    <Label>
+      <Caption>
+        <Value></Value>
+        <Font>
+          <Alignment/>
+        </Font>
+      </Caption>
+      <Background xsi:type="attribute:ColorDefinition">
+        <Transparency>0</Transparency>
+        <Red>255</Red>
+        <Green>255</Green>
+        <Blue>255</Blue>
+      </Background>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+      </Outline>
+      <Insets>
+        <Top>0.0</Top>
+        <Left>2.0</Left>
+        <Bottom>0.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Visible>false</Visible>
+      <Ellipsis>0</Ellipsis>
+    </Label>
+    <LabelPosition>Above</LabelPosition>
+    <Staggered>false</Staggered>
+    <MajorGrid>
+      <LineAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>196</Red>
+          <Green>196</Green>
+          <Blue>196</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </LineAttributes>
+      <TickStyle>Across</TickStyle>
+      <TickAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>196</Red>
+          <Green>196</Green>
+          <Blue>196</Blue>
+        </Color>
+        <Visible>true</Visible>
+      </TickAttributes>
+    </MajorGrid>
+    <MinorGrid>
+      <LineAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>225</Red>
+          <Green>225</Green>
+          <Blue>225</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </LineAttributes>
+      <TickStyle>Across</TickStyle>
+      <TickAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>225</Red>
+          <Green>225</Green>
+          <Blue>225</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </TickAttributes>
+    </MinorGrid>
+    <Scale>
+      <MinorGridsPerUnit>5</MinorGridsPerUnit>
+    </Scale>
+    <Origin>
+      <Type>Min</Type>
+      <Value xsi:type="data:NumberDataElement">
+        <Value>0.0</Value>
+      </Value>
+    </Origin>
+    <PrimaryAxis>true</PrimaryAxis>
+    <CategoryAxis>true</CategoryAxis>
+    <Percent>false</Percent>
+  </Axes>
+  <Orientation>Vertical</Orientation>
+  <UnitSpacing>50.0</UnitSpacing>
+  <Rotation>
+    <Angles>
+      <XAngle>-20.0</XAngle>
+      <YAngle>45.0</YAngle>
+      <ZAngle>0.0</ZAngle>
+      <Type>None</Type>
+    </Angles>
+  </Rotation>
+</model:ChartWithAxes>
+]]></xml-property>
+                        <property name="outputFormat">SVG</property>
+                        <property name="inheritColumns">false</property>
+                        <property name="height">264pt</property>
+                        <property name="width">869.4pt</property>
+                        <property name="dataSet">watersh</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">name</property>
+                                <text-property name="displayName">name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">hectares</property>
+                                <text-property name="displayName">hectares</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["hectares"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                    <text-data id="502">
+                        <property name="style">Tituru</property>
+                        <expression name="valueExpr">"Watersheds in Region " + params["region"].value</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                    <table id="445">
+                        <property name="dataSet">watersh</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">name</property>
+                                <text-property name="displayName">name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">hectares</property>
+                                <text-property name="displayName">hectares</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["hectares"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <column id="459">
+                            <property name="style">NewStyle6</property>
+                        </column>
+                        <column id="460">
+                            <property name="style">NewStyle6</property>
+                        </column>
+                        <header>
+                            <row id="446">
+                                <cell id="447">
+                                    <label id="448">
+                                        <text-property name="text">Watershed name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="449">
+                                    <label id="450">
+                                        <text-property name="text">Area covered in Hectares</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="451">
+                                <cell id="452">
+                                    <data id="453">
+                                        <property name="style">NewStyle9</property>
+                                        <property name="resultSetColumn">name</property>
+                                    </data>
+                                </cell>
+                                <cell id="454">
+                                    <data id="455">
+                                        <property name="style">NewStyle9</property>
+                                        <property name="resultSetColumn">hectares</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="456">
+                                <cell id="457"/>
+                                <cell id="458"/>
+                            </row>
+                        </footer>
+                    </table>
+                    <grid id="484">
+                        <property name="height">0.55in</property>
+                        <column id="485"/>
+                        <row id="486">
+                            <property name="height">0.55in</property>
+                            <cell id="487"/>
+                        </row>
+                    </grid>
+                    <text-data id="481">
+                        <property name="style">Tituru</property>
+                        <expression name="valueExpr">"Provinces in Region " + params["region"].value</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                    <table id="463">
+                        <property name="dataSet">prov</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">province</property>
+                                <text-property name="displayName">province</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["province"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">less10</property>
+                                <text-property name="displayName">less10</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["less10"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <column id="477">
+                            <property name="style">NewStyle6</property>
+                        </column>
+                        <column id="478">
+                            <property name="style">NewStyle6</property>
+                        </column>
+                        <header>
+                            <row id="464">
+                                <cell id="465">
+                                    <label id="466">
+                                        <text-property name="text">Province</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="467">
+                                    <label id="468">
+                                        <text-property name="text">Tree Cover in Hectares</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="469">
+                                <cell id="470">
+                                    <data id="471">
+                                        <property name="style">NewStyle9</property>
+                                        <property name="resultSetColumn">province</property>
+                                    </data>
+                                </cell>
+                                <cell id="472">
+                                    <data id="473">
+                                        <property name="style">NewStyle9</property>
+                                        <property name="resultSetColumn">less10</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="474">
+                                <cell id="475"/>
+                                <cell id="476"/>
+                            </row>
+                        </footer>
+                    </table>
+                    <grid id="488">
+                        <column id="489"/>
+                        <column id="490"/>
+                        <row id="491">
+                            <cell id="492"/>
+                            <cell id="493"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="newVar">
+            <property name="type">page</property>
+        </variable-element>
+        <variable-element name="NewVariableElement">
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+    <list-property name="images">
+        <structure>
+            <property name="name">r2.JPG</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/4RDyRXhpZgAATU0AKgAAAAgABAE7AAIAAAANAAAISodpAAQAAAAB
+                AAAIWJydAAEAAAAaAAAQ0OocAAcAAAgMAAAAPgAAAAAc6gAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGp1bWFyIGRh
+                bWlhcgAAAAWQAwACAAAAFAAAEKaQBAACAAAAFAAAELqSkQACAAAAAzQ5AACSkgACAAAAAzQ5AADqHAAH
+                AAAIDAAACJoAAAAAHOoAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyMDE3OjExOjAzIDA0OjE3OjE5ADIwMTc6MTE6
+                MDMgMDQ6MTc6MTkAAABqAHUAbQBhAHIAIABkAGEAbQBpAGEAcgAAAP/hCx9odHRwOi8vbnMuYWRvYmUu
+                Y29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0n77u/JyBpZD0nVzVNME1wQ2VoaUh6cmVTek5UY3pr
+                YzlkJz8+DQo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIj48cmRmOlJERiB4bWxuczpy
+                ZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPjxyZGY6RGVzY3Jp
+                cHRpb24gcmRmOmFib3V0PSJ1dWlkOmZhZjViZGQ1LWJhM2QtMTFkYS1hZDMxLWQzM2Q3NTE4MmYxYiIg
+                eG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIi8+PHJkZjpEZXNjcmlwdGlv
+                biByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFiIiB4bWxu
+                czp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iPjx4bXA6Q3JlYXRlRGF0ZT4yMDE3LTEx
+                LTAzVDA0OjE3OjE5LjQ4NjwveG1wOkNyZWF0ZURhdGU+PC9yZGY6RGVzY3JpcHRpb24+PHJkZjpEZXNj
+                cmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFi
+                IiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPjxkYzpjcmVhdG9yPjxy
+                ZGY6U2VxIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5z
+                IyI+PHJkZjpsaT5qdW1hciBkYW1pYXI8L3JkZjpsaT48L3JkZjpTZXE+DQoJCQk8L2RjOmNyZWF0b3I+
+                PC9yZGY6RGVzY3JpcHRpb24+PC9yZGY6UkRGPjwveDp4bXBtZXRhPg0KICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8P3hwYWNrZXQg
+                ZW5kPSd3Jz8+/9sAQwAHBQUGBQQHBgUGCAcHCAoRCwoJCQoVDxAMERgVGhkYFRgXGx4nIRsdJR0XGCIu
+                IiUoKSssKxogLzMvKjInKisq/9sAQwEHCAgKCQoUCwsUKhwYHCoqKioqKioqKioqKioqKioqKioqKioq
+                KioqKioqKioqKioqKioqKioqKioqKioqKioq/8AAEQgByQJpAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEB
+                AAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQy
+                gZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hp
+                anN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY
+                2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALUR
+                AAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEX
+                GBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWW
+                l5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/a
+                AAwDAQACEQMRAD8A9xooor0jxwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK
+                KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK53xL4103w0729yWa8NuZoYtp2v1ABbtk
+                qa6KsLxF4Xsdahubg2yPqX2OS3t5ndgFyrAcDjqx5x3qo2vqJ3scvPrMvxI8GXNjpiLb6jE8bTQPJhXX
+                Ocg9xkdD0x9M3Ph94Ju/Dc1zfao6C4lXykijbIVMg5J7kkenGOvNN+G3hO80KG4vtS3Q3FwPL+zso+QK
+                euQTnNd3WcVtKS96x216yhz0KEm6TlfXrbbz/q4UUUVRxhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUVWi1Kyn1Cax
+                huonuoAGlhVgWQH1H+eophcs0UUUgCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii
+                igAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii
+                igAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKw/CV/q+oaO7+IbQ2t5HO8Z
+                UptDKMEEeo5Iz3xW5Tas7CTurhRRRSGee/FW01h7O2u9OluDZRK4uo4XIC9MMwB5HXtxj3rh/h7HK/jr
+                Tvs8cjhWZpPLbbtXackn06cd+neveiAykMMg8EHvWdp2gaXpN1cXGm2UdvLckGVkzz9B0A9hiolDmmp3
+                enToejRx3ssLUw3Inzfa6rX8fLt5mjRRRVnnBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAF
+                FFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAF
+                FFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB5j8T9X8QW/mWIthDpErJsu
+                og25yBkqxBwOc8Ec4rhdN8Va7pKKmn6pcRxoMLGzb0Uc9FbIHX0r3LxNoMfiTQptOklaEsQySAZ2sOmR
+                3FeN614B1/RmkZrNru3U8T23zgjrkr94e+Rj3rkxKr3UqT+X/A6/ifT5NVyx0pUMZGKbejf+fS3yXzud
+                r8JdQvr6HV/ts0s6iWN1kkYtlmDbuT9F/OvRa8v+E+navaX15PcW0sGnzQ4zIu3fIG4wDz03c16hXTDm
+                cE5b2PEx0aUcVUVG3LfS21vIKKKKo4wooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAo
+                oooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAo
+                oooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAM/W9dsPD9gLzVJTHC0gjBVS
+                xLHtgewJ/Cr0ciSxrJE6ujgMrKchgehBrzb4x3Ei2uk2wP7uR5ZGHuoUD/0M10/w/vzqHgfT2c5eFDA2
+                BjGwlV/8dC0uZOXL/XU6JYeUaEa/Rtr7kvzu/uOkooopnOFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFF
+                FFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFF
+                FFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFF
+                FFAHK+P/AA9Z65oYluryOyltMtDNKwVMnHyEkgckAZz1x9Kb8ONOv9M8JCDU4PIczu8aZ52HHJ/HP4Yr
+                o7/TrTVLRrXULdLiBiCUcZGR0NWFVURURQqqMBQMAD0p2jv1L9rU5PZX9297edrC0VHcXMFpC011NHBE
+                vLPI4VR+JpLa6t7yBZrOeOeJvuyROGU/iKLPczur2JaKKKQwoopsj+XGzkM20E4UZJ+goAytX8V6JoMy
+                Q6rfrBK43BAjO2PUhQcfjVzTNUs9YsUvNNnWe3ckBwCORwQQeR+NfO+sXg1DXL69VWRbi5klVX+8oLEg
+                H3A4ruPhTa63/aRubZyujlnW4BdSGcKMALnIPKnOOgrCFZTqyppbdT3MVlP1bA08VKesraW7q9l5rrse
+                t0UUVueGFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR
+                RQAUUUUAFFFFABRRRQAUUUUAFeVeIZPiPbzLIxlaN3bYmmx7wg44OBnHoT716rRT6NF05ck1Oyduj1T9
+                UeBjwz4v1yZjPYahM+dxN2SnP/bQiuj8L+AvFVlqEMkt2+lWwcSSpHcZL4I+Uqpwcgd+P5V6zRWUaajL
+                mu2/Ns7q2Y1a1J0eWMY9lFJfjd3873CiiitDzgrnvHOrX2ieE7i90sqsyuimRlDbATjODx1I65610NQ3
+                dpb31pJbXkKTQSja8bjIYUxxaTTaueJ+DvC8njXWLy51C5ZIY3Etw6gb5Xck4HYZwST244549p07TrXS
+                dPisrCFYYIhhVH8z6k+tR6Vo+n6JafZtKtUt4s7iFySx9STyfxq7UQioK33vuzqxeKlianNtFaRXSK7L
+                9QoooqjkCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoo
+                ooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoo
+                ooAKKKKACiis/XJ5bfSWeCUwlpYo2lVdxjRpFV3A9QpJHXkdDTWom7K5oUVUv/Blv9jkuLBml1eNlktr
+                q8cuylDkR5/hRuVOP7xPOBTbTVbe5017yQ/Z1hDC4SUgNAy/eV/Qj/69Z06kaivEucJU3aZdorzXX/iw
+                bS+Nto1hv8qUrK94rJuA4IC8EH3PT0rnNS+KHiK7vWlsZ0sIOiwJGkmPcsy5J/Ie1TOvShpKR6OHynG4
+                lKVOm7PVN6L8f6Z7bRXkehfFm/t5Ei16BLuHoZolCSL7kfdb6DFerWd5b6hZxXVlKs0Eq7kdTwRVwnGa
+                vB3ObE4SvhJ8lePK/wA/R7E1FFFUcoUUUUAFFFFABRRRQAUUVRtdb0y91Caxs76Ce5gBMkUbglcHB/Ik
+                A+hp2YrpF6iiikMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK
+                KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK
+                KKKACs64nvb+9k0vRAq3CqDPdyLmO1DdOP43IyQv0JIBGdGqVg7ab4wVc/6Nq0bZG3pPGo28/wC1GG/7
+                91M24wbjuhxScknsyVtC1q2kP2PVoryI/wAN9CA6n2aMKD342+nPqi+HNRv7qFtavIBawusn2W1jOJmB
+                yN7Nn5QQPlAHua6aivN+tVbWueh9VpXvb8QrMvPDmj394bu806CWc7dzsv39vTd/ex75rTrN8Q3ItPDl
+                /KRubyGREz992G1VHuWIH41zxlKL912OiUYyVpK58yyJLrfiKQQBvMu7g7d2Tgs3fH1rQ8YeE5/B+qQW
+                N1cx3EksAm3RggDLEY5/3a9o8DfDyDwfNNdy3P2u8mTZuCbVjGckD68c+1afiPwPofimUT6rbyG5WPyk
+                njlKsq5JwB93qT1FZuKdz6OOcuFaCj/DirW76bnzJW74b8X6p4Yn/wBDk8y1ZsyWshyjepH90+49s56V
+                1fiD4N6vp4ebRpk1GEHIjxslx9Oh/P8ACvPLm1nsrh7e7hkgmjOHjkUqyn3BohOpRlzRPalLA5rS9lLX
+                y2a9P+Ae46J8Q9B1iFPNuksLgnDQ3LbcH2bof88V1IIZQVOQeQR3r5grqPC3jzUvDREJ/wBMsSeYJGOV
+                4x8jdu3HI/nXp0sbCbtPR/h/wD5PH8N1qEXPDvnXbr/k/wAPJM93orL0PxJpfiG283TLlXYDLwscSJ9V
+                6j69K1K7j5XyCiiikAUUUUAVtTiM+k3cStKpkgdQYThxlSPl9/T3rxHwbraeDdee61azuv3tt5YRVAYA
+                sDuw2P7te7188+LtTl1fxZf3MoK4mMSKRgqqnaB9eOfcmsa9RUqfPbVbfP8A4Fz2Mowrxtd4Zu0ZK8rb
+                2T0tfT4rdD13wr47s/FN/dWkNtLbSQgyRiQg+ZHkDJx0OSOOevU11NeBeB/EEPhvxMl3dg/Z5ImhlKjJ
+                VSQc478qK95gniureOe2kWWKRQyOhyGB7g06NT2tNT+8xzTBfUcVKir8ulm+qsvTrckooorU80KKKKAC
+                iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAC
+                iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKoagSmraG6cyLqACrjO7MM
+                it+Slj+FX6paPCdW8Sy6g+DaaYWt7cY+9OR+8f8A4CpCD3L+1TUkowbfYqKcppLudVRRRXiHsBWR4jby
+                rWzuGBMcF7C8hAztUttz9BuBPtmtesjxKA2kxBgCDf2YIPf/AEmKhbga9FFFABXL+L/AWl+LxFJdFre6
+                i4FxEBuK/wB0+o/lXUUUFwnKElKLs0fO3ir4Z614a3zxr9vsVG43EK8oP9peo/Ue9cZ0r68rzX4m+BNL
+                l8O3esaZZJb31viR/J+VZFz82V6ZAJORzx3qHBPY+iwWdzi1Tr6rv1+Z4hDNLbTpNbSvDKhykkbFWU+o
+                I6V2+ifFTV7BlTVUXUYeBk4SRR9QMH8R+NcLRTpYipS0i9Ox7eMyrCY3WrH3u60f/B+dz3fSPiH4e1YK
+                pu/sUzHHlXY2f+Pfd/XNdQCGUFTkHkEd6+YK2NI8V61oeF06/lWIdIXO+P8A75PT8MV6FPHQlpNW/L+v
+                vPk8XwvWh72GlzLs9H9+z/A+h6K8ssfjFKEC6npKO3eS3l2j/vlgf51X1j4t3tzC8Oj2a2e4Y86Vt7j6
+                DoD9c11e3pWvzL+vLc8RZTj3Pk9k7/h9+34nQePvHh0PdpmkPjUvlMkm0EQqee/BYjHGOhrx6WRppnlk
+                5eRizYHcnNI7tJI0kjM7uSzMxyWJ6knuabXk4jEuq+VfCffZTlFPAR55a1Hu/wBF5aev5BXp/wAINVma
+                S+0qSXdCiCaJGblecNgenI/H615hXefCO0eXxTc3O1vLgtSCwPAZmGAfqA35VWBbVWy2aZhxJCEsA5S3
+                TVvm7P8AC57HRRRXsn5qFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAU
+                UUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAU
+                UUUAUNbmuIdMIs3WOeaaG3SRhnYZJVj3Y9t2fwrotO0+30rT4bKzUrFEMDccliTksT3JJJJ7kmubSJ9c
+                15bRBts9NnjlunzgvKNskcYHoPlYn6AZ5x11cGMntA7MJHefyCiiiuE7grP1yxl1HRLm2t9nnFQ0W/7u
+                9SGXPpyBz261oVj675t1NZaXHI0UV67i4dDhvKVCSqnsSdoz2Gcc4oW4F7Tb1dS0m0vkQot1AkyqTyoZ
+                QcfrVqo4IY7a3jgt0WOKJQiIowFUDAA/CpKACiiigArO8QzC38MapMyCQR2crlD/ABYQnFaNcd8UNcTR
+                vBNzHk+dfD7NGB6EfMf++c/nQXCEpyUI7s+dScmkoormP1BKysgooopDCiiigAooq1punz6rqdvYWgBm
+                uJAi7s4Ge5x2A5PsKuMXOSjHdmVatChTlVqO0VqyO0tZr69htLVd808ixxrnGWJwK+gfC2gReG9AgsU2
+                tKBunlUf6xz1PuB0HsBUXhfwrZeHNLgiSCFrwLma5C5Z3xzgnnHJAHp9TW7Xu0KEaMWlq2fl2a5rPMai
+                drRjsv1fn+QUUUVueOFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUU
+                UAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUV
+                Xvr2LT7KS5n3FEwAqDLMxOFUDuSSAPc0w2E0GYQ+KtVtZ/lluEjngGOHjVQrHPqGOCPQqe/HTVheHNLn
+                t5bzUtTt44b28kG1AwdoYQoCxlhx1DMccZY8nGa3a8nEyjKq3E9LDxlGmlIKKKzr3XtM0+byLm8iFzjI
+                t0bdKeP7g5/Suc6DRrI1Aj/hJdHGRkicgf8AABUFvYanqqNd6jf3en+ZkwWlsVXyF7byQdz9yD8o6YPU
+                2dP0eaC/a+1K/a/uQnlRMYVjESHBIAHckcnPYcCnsBq0UUUgCiiigCvqF9BpmnXF7dtsgt4zI59gM8e9
+                fPHjfx7d+MZYo2gS2s4GLRxA7mJ9S1dx8aPExhtYPD9s+GmAmuSD/CD8qn6kZ/AV41Wc5W0PqclwEZL6
+                xUXp/mFFFFYn1YUUUUAFFFFABVrS7sWGr2l25kCQTI7+U21ioPIB9cZFVas6e8UWqWklyu6FJ0aQE4yo
+                YZ5+lb4fStD1R5+ZJSwNZNX92X5M+lqKKK+gPyEKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiii
+                gAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiii
+                gAooooAKKKKACiiigAooooAKz9fg+0eHdQi8qKZmtn2pMAULBSVzn3xWhXP+IGitdTsbrU7ZrzTC3lyQ
+                id1VH5dXaNRtkB2hQG4yR61S0d0TLazOv0We3udBsJrJzJbyW0bRMwwSu0YyOx9quO6xozuwVVGWYnAA
+                9aSONIY1jhRY0UYCqMAfhWDBaQ+INZvrjUUjurOzm+zWsLrmPcqgyOVPDNuJXPbZx1NeC7NtntxTSSZP
+                J4ltpdyaPBNqswBx9mT91nOMGU/IOevJPB4NWdD0w6VpccUxSS6cmS5mUf62Vjlj6nknHtir6IsaKiKF
+                VRhVAwAPSnUhhRRRQAUUUUAFNkkSGJpJXVI0BZmY4CgdSTTqgvbODULGazu1LwToUkUMV3KeoyCDQB8w
+                +KtYOv8Aim/1LnbNKfLB6hBwo/ICsivZvHXwpsU0Y3vhS0aGe3BaS3EjP5q9yNxJ3D079uevjRGDg1jN
+                O9z7/K8VRrUVCnpy6W/X5iUUUVmeqFFFFABRRRQAV0fgPSrfWPGFrbXtu1xbqrSSKPujaOC3+znA+pFc
+                5Xpnwcgge41Wcxf6REsaLJu/gbcSMfVAc124KKda76Hz/ENaVLASUftNL/P8FY9Tooor2j8xCiiigAoo
+                ooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoo
+                ooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACsvRrCfxRDY6tqTRppxPnwWK
+                qSZOoVpGzg4GDtAxnucCjxCxOkG2Rir3k0VquGK/6x1U8jkcEnI7A11sEEdrbRwQIEiiQIij+FQMAVz4
+                mq6cEo7s2oU1Un72yM/xFeS2miyLaki7uSLa2wcESOdob/gOdx9lNWdM0+LStLt7G3AEcCBRjue5/E5P
+                41RcC88aIpwV06z8wD0eZioPXqFjb/vr8tmvKPUCiiigAooooAKKKKACiiigAr5r8faNcWHjfWMQSGHz
+                /O3hPlVZPmHPTHOPwr6UqG7tIL+zltLyJZoJlKSI3RgaTSasztweLnhKntIq+lj5Joru/iF8O5vC85vt
+                ODzaVIep5aAn+Fvb0P4fXhKwlFpn3uFxVPFU/aU/+GCiiipOoKKKKACuw+F93Lb+OIIUl2JcxSI6EE78
+                KWH0IK5z6ZHeuProPA19b6d42065uyVjDsm4diyFQT7ZauvBu1df10PFz2HPl1RWvaz+5pnv9FFFe4fl
+                YUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQ
+                AUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBV1Gx+32nlLKYZUd
+                JYZlUExyIwZWwevI5HcZHerWh+Jba+jjs7+4t7fV0JjmtGkCuWX+JVPJVhhgR2PsaKz9bspL7S2W3VWu
+                IZI7iAMdv7yNw6jPbJXGfQms6lKNVWZUKkqT5okumapHbXuotPFeXN/NdyCSKG3YiONGKxnOMYKbT15J
+                PocbmnarZ6tb+dYTrIAcOvRoz/dZTyp4PBpdL1BNV0m2volKrcRh9jdVJHKn3B4/CqGmslx4q1i5twpj
+                WOC1d1/ikTzGb64Eij8CO1eQ1ZtM9dNNXRtUUUVIwooooAKKKKACiiigAooooAjuLeG7t5Le5jWWGRSr
+                o4yGB6givA/iH8PJfDFw1/pqtLpUjcHqYCf4W9vQ/geev0BXIfEDxLpGm+GNSsbq6ge8mt2jS13Avlhg
+                EjnGMg846UrX0Z2YPE1cPVUqW76dz5yooormP0gKKKKAClDMjBkJVlOVIOCDSUVUZOMlJdDOrTVWnKm9
+                mmvvPpixu476wgu4SrRzxrIpU5GCM1PXnPwq8SpPYnQbk4mg3SW5/vITkj6gn8j7V6NX0ikpJSjsz8ar
+                UZ0KsqVTeLs/689wooopmQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFA
+                BRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFA
+                BVTU70WNi0gDtK5EcKRpvZ3PCgDvzVus3UFMuuaBCFDbr8ud33flhkbn1OQCB6jPai9k32Fvoupr6HY3
+                Vh4QtLM7Y7xLUKSSWAkI5JJH945PH4VB4YvtOh8O2VuskdtJGvlyQSyKJFlBIfdzyd+7J7k5rfqnc6Tp
+                94sq3Vlby+aCrloxlgRg89a8SUuZtvqezGKjFRXQuUVi6ZLdafqS6NeubmMwNLaXJ+8yIyqyyf7Q3phh
+                97nOCOdqpKCiiigAooooAKKKKACiiigCK5uI7S0mubhgkUKNI7HsoGSfyr5W1nUptY1q71C4JMlxKznL
+                Zxk8D6AcV7l8XNdGleDWs45NtxqD+UoGc7By5/kP+BV8/wBZ1HpY+qyDD/FXfov1/QKKKKxPqgooooAK
+                KKKANLQdbuPD2rJqFmqvKiMoVydpyMcgEZHfHqBXpTfF7To9OjIsbma98pS6KAkW/A3DcSTgHPY15HRX
+                bSxk6cOSyaPn8dkOFxlb20m4t7269t79uh7/AOFvGWn+Ko5BaJLDPCAZYZQOM9wR1GeOx9hXQV8++C7y
+                90/xbZTaesrBpFSdY0LZiZgGyB25H44r6Cr2ISU4Ka6n55jcM8JiZUG72t+Kv2QUUUVRyBRRRQAUUUUA
+                FFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUA
+                FFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVnXbfZ/Emh3UvzQid4CpbAR5EISTHc8FPpIa0
+                ay/EQ/4kruCQ0U0MqkH+JJUYfqBRbmVu4m7a9tfuOxooorwj2zE1L7TaeIrTURbS3VsttLblYF3PGzMj
+                Zx3B2Ae2B60XHiMNFs0ywv7i6chY0lsZ4UyT1Z3QBQOp/StusjxPJINAmt4GKzXpW0jIzlTIwQtx6Alv
+                wpgQeHdV1TV5JZ7m3tV04ZWC4iY5nIbG5Rz8nBwTgng4xW9TIokghSGFAkcahUUDhQOAKfSYBRRRQAUU
+                UUAFFFFAHk3xztAbXSLsHBV5IyMnnIUj27H868cr2v44/wDIB0z/AK+G/wDQa8UrGpufcZG28J83+gUU
+                UVme4FFFFABRRRQAUUUUAdv8KbSabxc1xFIUjt4G80Bsbw3ABHcZ5/AV7RXzdpGsX2hagt7pc5hmAKk4
+                BDKeqkHqOK6vwt4o1jWviLps17cPNuLRmGM7EC7Gydo44+9+H0r2sLWpunGnfX+mfneeZZiniauKsuTR
+                3v5JWtvf+r9D2aiiiu0+VCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA
+                KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAqlrUM
+                dxoN/DMu6N7aRWB7jaau1maosmo3EOh2rtHJeAtPInWK3BAcg9mOdoPqc9qaaWrE1dWR0ulSSTaPZyzn
+                MjwIznOckqM1bpkcaQxJFEoVEUKqjsB0FPrwnqz2krKwVkeJBs0yK4BINtdwSkj+6JVD/wDjpatOaeK3
+                j3zypEmcbnYAfmaw9b1C21KGPSNPuYZ7q6kTKxtv8uMMCztjoMKcZxk4FC3GdBRRRSAKKKKACiiigAoo
+                ooA89+M2nG68GR3a7s2dwrNgcbW+Xn8dteC19OeO7eO68B6xHKyqotmcF+mV+YfjkDHvXzHWVToz6/h+
+                pelOHZ3+/wD4YKKKKyPpQooooAKKKKACiiigAr0r4TaBMbuXXZ0UQBGhgJ6lsjcw+gBGfc15rXvHw7iu
+                IvAmni6XYWDNGuzbhCxKn3z1z3zXpYCCcnPt+p8jxRiJQw8KK2k9flZ/nb8Dp6KKK9U/PwooooAKKKKA
+                CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKA
+                CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAqahffYkgEcLTz3MywwxKQN7HJ6ngAAEn2FWtD
+                0S4t7+XVtWaNr+aIQpHESUt4s52AnG4k4JbAyQOwFZ98Vh13RLmVVeNbsxEMB8rOjKrDPcHA+jGuurjx
+                VSUUoLZnVhqcZNyfQKKKq6lcG10m7uA4jMMDuHOMLhSc815x6Bj6DpdnqdhDrOpWsV1eXgM6yzoHMaNk
+                oqZztGwgYHXvzmt2C2gtlItoY4QxyRGgXP5VX0a3+yaDYWwVk8m2jj2t1GFAwau0MAooooAKKKKACiii
+                gAqG5u7eyt2nvJ4reFfvSSuFUfia8r8bfFqeyvL3SNCtjDNBIYXu5CCQynDbVxjt1P5CvKtQ1nUtVkd9
+                Rvri5LtuPmSEjP0qXJI9jCZRiMRFTfux8/0R2/xZ8WDVtcWw0y+EunwxDf5EpaOR+ueODjgd+/Ned0UV
+                jKV2fYYPCxwtJU4/N9woooqTsCiiigAooooAKKKKAJ7Kzm1G+gs7Vd808gjQe5OOfavo/TLIabpNpYq5
+                kFtAkIcjG7aoGcfhXkHwu0E6l4iOoShhBp4DAg43SHoPpjJP4ete0V7uEp8lK73ev+R+Z8RYr2+N5IvS
+                Gnz6/ovkFFFFdR86FFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUA
+                FFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAGbqP+l6npmn
+                Rbnke6juJFUfdjiYPuY9huVR7k49a6+uN8KRyx+KdTGrXbS6h5YWBdqqr24bcGXAB4Z9p644yTkY7KvO
+                xkv3nL2O7Br3HLuFYfiaZJ7H+x4j5l1qGIhCp5ERYCRzjooXPPc4A5Irad1jRndgqqMsxOAB61h+GIGu
+                rUa5fKGv79ASxUjyo85WNc/w98/xE5+nIu52G9RRRSAKKK43Uvir4W02aSE3U1zLESrpBCeGBwRlsD+l
+                BcKc5u0Fd+R2VFeWXfxysI2/0HR7idc9ZZhHx+AasC8+NuuSgrZ2Nlbgj7xVnYHPbnH6Urrud0Msxk9q
+                b+en5nuVcl8QfGMPhbQ5Eil/4mNyhW3VcEoT/GQT0HODg8/jXkGo/FLxVqEXl/2h9mXHP2ZAhP8AwLr+
+                tcrc3Vxe3Dz3k8k8znLSSMWZj6kmpc0tj0cNkVaUk6zSX4jJZZJ5nlmdpJHYszscliepJplFFYn2KSir
+                IKKKKQwooooAKKKKACiiigAqSGGW5uI4LdDJLK4REHVmJwB+dR13/wAKvD5vdYk1idf3FkdkWR96Uj/2
+                UH/x4V04al7Wok9up5WbY36lhJVF8T0Xq/8ALf5HpXhnQIPDehxWEB3sDvlkxjzHPVv0A+gFa1FFe8fk
+                7bbuwooooEFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAB
+                RRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRVTVNTt9J02e8umAWGJpNm4Bn2jOBnq
+                eKaV3ZCbSV2W6KpW19M2oSWF/aNZ3SxiZVLh1kQkjII9CMEdsj1q7SGFFFFAFOwZW8dhZXCNFpzeQpP+
+                t3yDzMf7vlx/9911NcjqB263oTxn98t9woGWZDE6v+ABBP0FddXnYxWmn5HdhH7rXmc7LDN4nuriKWRo
+                tHgmETRBBm7dGO8EnogYBcDrtYdDXQgBVAUAADAA7Vk+HiUi1C2PWDUJ+owRvbzef+/n5YrXrjZ2BRRR
+                QBn69dSWPhvUru3IEsFpLKhPZlQkfqK+VCckk96+rNcSOXw/qMc+DG9rKr5OOChzzXylWdTZH1PDyV6j
+                9P1CiiisT6sKKKKACiiigAooooAKKKKACiitjwx4cu/FGuRadZDG75pZCMiNB1Y/56kCmld2Mq1WFGm6
+                k3ojQ8KeAdX8Xwzz6eYYYYWCmW4LBWbrgYBycc/iPWug/wCFIeIf+f8A0z/v5J/8RXs+k6VaaJpUGn6f
+                H5cEC7VHc+pPqSeau1vyxPiamc4uU24Ssu1l/kfPV38KtatNWt9P+1WMs0sZlby3fESAgbmyo6k4AHXB
+                9K9V8PaFb+HdFh0+0JcJlnkYYMjHqx/z0ArM0TW5NT8WamLyOUXe3ynHl7Y4FibiPnkk+aW3HruOOAK6
+                avbpUY0Y2S1e58zi8xxGOd6srpbLRW+4KKKK0OIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiii
+                gAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiii
+                gChcyXV5qcek6ZIIZnj86e4Khvs8WcAgHgsxyFzx8rE5xg3LTwfYJJPLq/8AxOZpDhZb+JHMceANgUAK
+                BkE8AZzzUfh8q/ifWmLEyLHbR49EAdh+rNWxqt8um6Tc3jwzTiGMt5UCku/soHc1w4irPn9nHyOuhTg4
+                e0n5/geX6P8A8JBdeJLqWyEmo6fp0t2IGuHJUgSBdquE5YjJwCQRjjI57TS9Rg1bTIL22PyTIG25BKHH
+                KnHQg8EdiKxPCviibTTDoesSOs0wVbYzxbGhkI4icMELDPCtjBzjPIq54Tk83w/GZUdbrewvC5Ul58/v
+                DlSQfmz06dOMYHfeV2mrWtb8TgjypJp3ve/lsbVFFFI0MrWg9vPpmpW6o1xa3saIrjIYTN5JHUY/1mc/
+                7OOhNdlXLatZPqGlzW8MnlTHDwyf3JFIZG/BgDVnw/rl9d3kun67bR217taeHyWLJJFuxjOPvLlQR/tK
+                R145MVTcoqa6HThqijNxfUsWf+j+LNThydtzDDdLwcFvmjb26JH+Y9K2KxtUK2niLSb1yERhLaO5wAN4
+                DjJPvEAPc471s15rPRCiiuA+LXic6L4bGn2rlbvUcpuU8pGMbj+OcfTd6UGlKnKrNQjuxnxg8QLpnhYa
+                bE/+k6g20gdo15Y/icD8/SvBaUsT1JP1NJWEpXPvsuwP1Om4t3bCiiioPSCiiigAooooAKKKKACiilAz
+                0pibsrskt7eW7uore2jaSaVwiIoyWYnAAr6O8B+D4vCWhLE4Vr+cB7mQevZR7D9Tk1zXwt8ANpUa65rM
+                RW8kX/RoHHMKkfeP+0fTsPc8enVvGPKj4fNcw+sz9nTfuL8X3/yCobq5js7Oa6nJEUEbSOQM4UDJ/lVL
+                WdaTShBEkDXV3csVht0OCwH3mJ7KARk+pA71WsbyDxVol/DqdiYIPMktZommBDgAbjuUjA5I7HitlTly
+                87Wh8+6keZwT94ydLZ9Q1G61m5SKKW6SNUgQhmhjAJXcR/EQ2T9AMkAVq1geFbC2ihn1G0higjvSohii
+                JKrEmdvzHliSzNu/2gOgFb9e00lojyIttXYUUUUigooooAKKKKACiiigAooooAKKKKACiiigAooooAKK
+                KKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKK
+                KKAIvB3lG01I4Iuv7RnFyGTaQd37vtyPKMZB56/gOirm/CSB7jWrxsl5L4xbsjaVjRQMAdMEkHPOR6Yr
+                pK8nE/xZHp4b+FEyfEXhuw8Taf8AZdQQhlOYpkxvib1H6cHjgegrnbS08UaVp6GXTbGeCBjD9ks/3cgR
+                WCq6ZJVgRltp2YGBkmu4op08TOmuVaoVTDQqS5tmczYX8OpWa3FvuAJKsjjDIw6qw7EGrNcj8P7S4s7P
+                UoJ7uO4SC8aBRFEY13LyxCkAry23bgAeXxxzXXV68kk7I8qEnKKbCs6948Q6GYMm6+0sFA7xbD5mfbGP
+                x2+uKS71qCG5FlZAX2oswVbSJxuHux/gUDnJ9OM1q6Foj2M0+oaiyTaldAB3QkpCg6RJn+EdScAsTk9g
+                MK1RU4O+7NqUHUkkun9fea1xbw3Vu8F1DHNC4w8cihlYehB61jjQrrTCW8PXpgjzkWNwN9v9F/iT8DtH
+                92tyivHueuY5vdedQsej20chHLy3vyLx1G1CTz2wM+1cZ8QfA/iDxTDbXUb2MtzbhgIYg0ZKnoNzMQTx
+                /s9favS6KDSlVnRmqkHqj5S1XRNS0S48jVrKa1c52+YuA3uD0I9xVCvob4qaB/bfhWNoyiTW1whWRycK
+                rsEbPtyCT6LXKW3wLlaBTd66kcuPmWK2LqPoSwz+VZOn2PrcNnlJ0r4jSXkvxPJKK9nn+Btk0JFtrM6S
+                djJCGH6EVzF98GvElszm2a1u0VSymOTBb2wQOf0560uRnXTznBz3bXqv8rnn9FWb+wutMvZLPUIJLe4i
+                OHjkXBH+RzVao2PVhOM4qUXdMKKKKRYUUVYsbG51K9jtLGF555W2pGgySae5E5xhFyk7JEUUUk8yRQo0
+                kjsFVFGSxPQAV7X8PfhhHpixat4iiD3v3obZuVh9Gb1b26D69LXg/wAEaX4G00az4hkjN/gZdjlYM8BV
+                A6sc4zz6DvnoJfGNtcqyeHreTVZgvLRkJFEx6CRmIwfVQCwHauulQnLWKufDZrnUardKDtH8X8t7eR0l
+                Zer67BpTRwLG91ezA+TaQkb2A6sckBVHdj9OSQDhppl9Mxn1DWr57pmJJtpTDEg5+VYwSMAYGTk8deTU
+                U8Nt4esJrq0hee7lKRI00rSSTyM21FLsScFm/DJrvhg0n7zufLzxbt7qsZ+tyX+seJNN+1qmnRHfDJHD
+                NmZ7cgNKzMBhFBRPmyCORn5quQwR6/Z26Lbx23h6I7rWyVP+PkdpJP8AZOSQvfILE5wIG0SBvESWl1M+
+                oTJEZ9TkIxG0ny+THjpsAMrBOexOSQT0YAVQFGAOAB2rrSjaLjstv8zj97mlzdd/8v8AMAAqgKMAcADt
+                RRRTKCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA
+                KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAIPBPmyaTdXAlD2Vxezy2a4yVQyH
+                cd2BkM+5x6Bhye3SVwtu2u2ukLoNpbmG3gdYotR+0KHEAkBwFweRHlcnHOOMc1f8PP8A2Tr1xpUtxJJD
+                eILm2a4lLMZANsqgnr0V8D+83GK4a+Hk3Kp/VjroV4pRp/1c6uiiiuA7zI1Lw1p+pXBu9slpfFdv2y0f
+                y5SOOGI4ccDhgw9qqp4OtCAL3UNTvVB3FJroqrH3CBcj26e1dDRWqrVIqykZOhSk7uJWsdPs9MtVttOt
+                YbWBTkRwoEXPrgd6s0UVk227s1SSVkFFFFABRRRQA2SNJomjlRXjcFWVhkMD1BFZXhxTDZ3NqrM0Vrdy
+                Qwh23FEGMLk8kDOBntWjd3lvYWkl1ezJBBENzyOcBRVDw2kg0VJ7hGSa7kkuWVlww3uWUEdsKVH4UdAN
+                WiiigDwP4ywND47EhAAmtY3GO/Vef++a8/r0344QFfE2n3GRh7PYB6Ydj/7NXmVYT+I+/wAolfBQ+f5s
+                KKK3PC3hPUfFepra2Ee2McyzuDsjHufX2qUm3ZHfWrU6EHUqOyRT0TRL/wAQanHYaXAZZn5PYKO5J7Cv
+                eNB8M6X8OvD7Xckb3l4SiSSxqN8jOwRUQEgAbmA5I9SfSzY6Xpfw98OpHY27XN1KyxLggSXUx6DJ6Dqf
+                ZQTzioYtLlu9QOpa66XN5lfKjQfurcLnAQdzlidx5zjpgV6OGw3N7z2/M/PM2zieIlyR0XRfq/8AL/hx
+                6QXuqXsWoa2RGYSWtrGN90cBIxuZsDe+CRnoMkAdzo0UV6qSSsj5rW92FZur6VLqb2rQ3jWpgkLEqm4k
+                EYyvOFYAnDYOM5AzgjSopp2E1dWZXsrG20+38m0j2IWLMSxZmY9SzHJY+5OasUUUD2CiiikAUUUUAFFF
+                FABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFF
+                FABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBXlv7SC8htJriNLifPlRs2C+PT/PY+lZviO6+yR2U
+                1uJXv4rkS2kUUTyGRgpDgqgJxsZ8ntmjXoLK1aPW72WdVs9uY4ygWQ7vl3bhxhj13KPU4qJ7ybWdS0o6
+                Jb/6TEkWoK87hNkT5UgjOTlSwIGcHb14qmko83Qzu3Ll6nQXGuTXafZ9DtLo3UnAlu7OaGKEf3mLqM+y
+                jkn0GSHNfahpNwy38E1/aOQY7m2h3PH6h415I7gqD6EcAnaorwD3ivaX1vfeZ9nclomCyIyFGQkBgCrA
+                EcEH8asVjRutp4znjkJQX9pG0OTw7xs4cD32tHx6Ansa2aACiq9/fQabZSXV2xWKPGdqliSSAAAOSSSA
+                B6msmC68SeYbqSwtXtpvu2hl2TQDtluVYnuOMeposBvVyUusXUHiOXVZJyNFinGmyIW+VWyP33pxI3lk
+                /pxmtZ9Q1oo3laIofHy77xdue2cDOKsaXpaWGiQWE5W4Kp++YoMSuTl2x7sSfxp7AVf+EnspzjS4rrVO
+                cbrOEtGT6eacJ3/vVJa60xvI7PVLKTT55hmHe6ukvGSoYcbuvy9cDIzWrVa/sINSs2trkNsJVlZGKsjK
+                QVYEdCCARS0AzL8/2j4nsbFUVo9PIvpy3IyVkSNceuct7bB7VuVT03S7XSrYw2cZG47pJHJZ5WPVnY8s
+                T6mrlABRRRQByXxA8GL4v0ZVgZY762JaBm6Nnqp+uBzXzlJG8UrRyKVdCQykYINfXVefXnwo0/UfG9zq
+                95JusJj5rWqsQzynO7JGMLnng55PSplHmPay3MvqnNGesei8zzfwP8PL7xXMLi4DW2mKfmnIwZOeiep9
+                +le+aTo9joenJY6XbrBbpyFHJJ7kk8k1ZhgitoEht4kiijG1I41Cqo9AB0qSmkkrI4sXjKuLnzTenRdE
+                c54jIOv6GG2kb5yMno3l44H0LVNVjxBpc2p2MX2N0S7tZ1uIDISFLDIKsQCQGVmXI6Zzg9Kxmm1XTtRs
+                7fV4LRorwskc1tIx2yBS20qV6FVYg57dK9XDTi6ajfX+mfP4iMo1HK2jt/kaNFFFdJgFFFFABRRRQAUU
+                UUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUU
+                UUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFU9R0+O98qUzS2s1uxaK5gYK8eQQw
+                BIIwQSD+B6gEXKxfGH/Il6v/ANekn8qqKu7EzdotnQeFbi5vPCmnXV9K0008Cy+YwAZlblc44ztIzjvW
+                vUNn/wAeMH/XNf5VNXhTd5NntQVopFDWNPbUbApBJ5N1E3m202M+VKPun6ckEdwSO9N03V4b3Sftk5W3
+                MRZLlXYDyZFOGUntg9+4we9aNeca5/x5+I/+w3a/yhpLXQo6aKVfE+pQzQNIdJsyssb7Coups5BGRyiY
+                zkcFj/s10NFFIAooooAKKKKACiiigAooooAKKKKACiiigArhbH/TfGetXF3JFdS20qpbvDM0scCYKlBn
+                hJPly4A43Drmu6rz74ff8iDpf/XNv/Q2r0MFHSUvRff/AMMefjH70Y+r+7/hzpKKKK7TlCiiigAooooA
+                KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA
+                KKKKAP/Z
+</property>
+        </structure>
+    </list-property>
+</report>
