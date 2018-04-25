@@ -64,7 +64,7 @@
         
       </ul>
       <div class="login">
-        <a *ngIf="!window; else elseBlock" class="btn btn-sm btn-xs btn-success" data-toggle="modal" [attr.data-target]="'#login'">LOGIN</a>
+        <a *ngIf="checkCookie(); else elseBlock" class="btn btn-sm btn-xs btn-success" data-toggle="modal" [attr.data-target]="'#login'">LOGIN</a>
         <ng-template #elseBlock>
           <a class="btn btn-sm btn-xs btn-success" (click)="logout()">Logout</a>
         </ng-template>

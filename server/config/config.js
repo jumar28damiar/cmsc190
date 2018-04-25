@@ -4,11 +4,11 @@ const _         = require('lodash');
 const winston   = require('winston');
 
 const config  = {
-    APP_NAME: 'MalICSi Web Application',
+    APP_NAME: 'PEWON Watershed Monitoring System API',
     APP_URL: 'http://localhost:80',
     PORT: 80,
-    COOKIE_SECRET: 'M@L1C51',
-    COOKIE_NAME: 'mAlIc51',
+    COOKIE_SECRET: 'p1w0n',
+    COOKIE_NAME: 'peewoon',
     // Directories
     // DIR: {
     //     ASSETS: __dirname + '/../../frontend'

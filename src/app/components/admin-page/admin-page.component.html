@@ -1,4 +1,4 @@
-<!-- <form class="form-inline" class="dDown">
+<!-- <!-- <form class="form-inline" class="dDown">
   <select class="mySelect custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" (change)="changeData()" style="width:200px;">
     <option *ngFor="let app of bodyData;let i = index" [attr.value]="app[1]">
       {{app.Subwatershed}}
@@ -106,4 +106,17 @@
 
 </div> -->
 
-<iframe src="http://127.0.0.1:49978/viewer/preview?__report=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer%5CnewSub.rptdesign&__format=html&watershed=Balogo&subWatershed=Balogo_2&watershedName=Balogo&__locale=en_PH&__timezone=CTT&__svg=true&__designer=true&__resourceFolder=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer" frameborder="0" scrolling=yes safe></iframe>
+<!-- <iframe src="http://127.0.0.1:49978/viewer/preview?__report=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer%5CnewSub.rptdesign&__format=html&watershed=Balogo&subWatershed=Balogo_2&watershedName=Balogo&__locale=en_PH&__timezone=CTT&__svg=true&__designer=true&__resourceFolder=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer" frameborder="0" scrolling=yes safe></iframe> -->
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" [ngStyle]="{'height': h}">
+  <div class="form-group">
+    <label for="name">DATA UPDATE</label>
+    <!-- <input type="text" class="form-control" id="name" placeholder="Bob" formControlName="name"> -->
+  </div>
+  <div class="form-group">
+    <label for="avatar">XLSX FILE</label>
+    <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput>
+    <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+  </div>
+  <button type="submit"  class="btn btn-success">Submit <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+</form>

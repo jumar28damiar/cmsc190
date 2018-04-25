@@ -1,0 +1,36 @@
+<style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  #gmap {
+    height: 100%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+
+</style>
+
+<div style="height:900px;">
+  
+  
+    
+  <!-- <h1>{{title}}</h1> -->
+  
+
+  <div >
+      <div   #gmap style="margin:20px;width:400px;height:720px;float:left;">
+          
+      </div>
+  </div>
+  <form class="form-inline" class="dDown">
+    <select class="mySelect custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" (change)="onChange($event.target.value)" style="width:200px;">
+      <option selected *ngIf=(firstVisit)>Choose Region</option>
+      <option *ngFor="let app of regions;let i = index" [attr.value]="app" (click)="redir(app)">{{app}}</option>
+    </select>
+  </form>
+  <div class="col-sm-7" style="float:left;position:relative;width:100%;height:100%">
+    <div  #chartTarget style="height:800px">
+      chart target
+    </div>
+  </div>
+</div>
+
+<br>

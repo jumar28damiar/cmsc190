@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer } from '@angular/core';
 import { DatatransService } from '../../services/datatrans.service';
 import { ActivatedRoute,Router } from '@angular/router'
-
+import { refreshService } from '../../services/refresh.service';
 
 @Component({
   selector: 'app-birt-dock',
@@ -10,15 +10,19 @@ import { ActivatedRoute,Router } from '@angular/router'
 })
 export class BirtDockComponent implements OnInit {
 
+  @ViewChild('aydi') headerTable: ElementRef;
+  // @ViewChild('ayditu') contentCharts: ElementRef;
   
   constructor( 
     private route:ActivatedRoute,
     private dataService:DatatransService,
-    private router: Router 
+    private router: Router,
+    private refserv: refreshService,
+    private renderer: Renderer
   ){
-    console.log(document.domain)
+    //console.log(document.domain)
     document.domain=document.domain;
-    console.log(document.domain)
+    //console.log(document.domain)
     if (window.addEventListener) {
       window.addEventListener("message", this.receiveMessage.bind(this), false);
     } else {
@@ -27,7 +31,7 @@ export class BirtDockComponent implements OnInit {
    }
 
   receiveMessage(event){
-    console.log("ASDASDASsDASD",event)
+    //console.log("ASDASDASsDASD",event)
   }
   contSizerFlag = -1;
   sayz = window.innerHeight;
@@ -55,16 +59,37 @@ export class BirtDockComponent implements OnInit {
   ngOnInit() {
     var dis = this;
     // this.len = this.sayz/15 + "px";
+
+    //socket.io listening
+    this.refserv.messages.subscribe(msg => {
+      // console.log(msg);
+      var load = window.setInterval(function reloadIFrame() {
+        
+  
+          this.document.getElementById("aydi").src = dis.rinku+dis.name;
+          this.document.getElementById("ayditu").src = "http://127.0.0.1:8080/birt-viewer/preview?__report=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer%5CSub.rptdesign&__format=html&__svg=true&__locale=en_PH&__timezone=CTT&__masterpage=true&__rtl=false&__cubememsize=10&__resourceFolder=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer&__emitterid=org.eclipse.birt.report.engine.emitter.html&-734436226&watershedName="+dis.name;
+  
+          dis.renderer.setElementProperty(dis.headerTable.nativeElement, 'src', dis.rinku+dis.name)
+          // dis.renderer.setElementProperty(dis.contentCharts.nativeElement, 'src', this.document.getElementById("ayditu").src)
+          
+  
+        
+        clearInterval(load)
+        // this.document.getElementById("myId").location.reload();
+      }, 1);
+    })
+
+
     this.sub = this.route.params.subscribe(params => {
       this.name = (params['id']).toString();
-      console.log(this.name);
+      //console.log(this.name);
       
     })
         var lagin = this.dataService.getSheds(this.name).then(function () {
               dis.bodyData = JSON.parse(dis.dataService.getShedsData())[0]; 
-              console.log(dis.subSheds); 
+              //console.log(dis.subSheds); 
           }, function(err){
-            console.log(err)
+            //console.log(err)
             alert("Server Error")
           });
     this.rinku = "http://localhost:8080/birt-viewer/preview?__report=shedHead.rptdesign&sample=my+parameter&__format=html&__svg=true&__masterpage=true&__rtl=false&__cubememsize=10&__emitterid=org.eclipse.birt.report.engine.emitter.html&visib=true&watershedName=";
@@ -74,18 +99,14 @@ export class BirtDockComponent implements OnInit {
 
     var load = window.setInterval(function reloadIFrame() {
       
-      // console.log("something",this.document.getElementById("myId")[0]);
-      // console.log(this.document.getElementById("myId").src,dis.iframeUrl)
-      // if(this.ishide){
-        
-      // }else{
+
         this.document.getElementById("aydi").src = dis.rinku+dis.name;
         this.document.getElementById("ayditu").src = "http://127.0.0.1:8080/birt-viewer/preview?__report=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer%5CSub.rptdesign&__format=html&__svg=true&__locale=en_PH&__timezone=CTT&__masterpage=true&__rtl=false&__cubememsize=10&__resourceFolder=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer&__emitterid=org.eclipse.birt.report.engine.emitter.html&-734436226&watershedName="+dis.name;
-        
-      // }
 
-      //http://127.0.0.1:8080/birt-viewer/preview?__report=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer%5CSub.rptdesign&__format=html&__svg=true&__locale=en_PH&__timezone=CTT&__masterpage=true&__rtl=false&__cubememsize=10&__resourceFolder=C%3A%5Capache-tomcat-7.0.82%5Cwebapps%5Cbirt-viewer&__emitterid=org.eclipse.birt.report.engine.emitter.html&-734436226&watershedName=aborlan
-      
+        dis.renderer.setElementProperty(dis.headerTable.nativeElement, 'src', dis.rinku+dis.name)
+        // dis.renderer.setElementProperty(dis.contentCharts.nativeElement, 'src', this.document.getElementById("ayditu").src)
+        
+
       
       clearInterval(load)
       // this.document.getElementById("myId").location.reload();
@@ -95,7 +116,7 @@ export class BirtDockComponent implements OnInit {
     }
     window.document.getElementById("ayditu").onload = function(){
       dis.removeBg('contentHolder');
-      console.log(frames[1])
+
 
     }
    
@@ -112,8 +133,8 @@ export class BirtDockComponent implements OnInit {
     var dis = this;
     var load = window.setInterval(function reloadIFrame() {
       
-      // console.log("something",this.document.getElementById("myId")[0]);
-      // console.log(this.document.getElementById("myId").src,dis.iframeUrl)
+      // //console.log("something",this.document.getElementById("myId")[0]);
+      // //console.log(this.document.getElementById("myId").src,dis.iframeUrl)
       // if(this.ishide){
         
       // }else{
@@ -133,28 +154,28 @@ export class BirtDockComponent implements OnInit {
       if(this.contSizerFlag!=0){
         window.document.getElementById('contentHolder').style.height="950px";
       }
-      console.log("im at new page", this.contSizerFlag)
+      //console.log("im at new page", this.contSizerFlag)
     }else{
       window.document.getElementById('contentHolder').style.height="1600px";
     }
   }
 
   redir(x){
-    console.log(x)
+    //console.log(x)
     this.router.navigate([x]);
   }
 
   onChange(deviceValue) {
     this.router.navigate([deviceValue]);
     this.change();
-    console.log(deviceValue);
+    //console.log(deviceValue);
     this.firstVisit = false;
   }
 
   removeBg(id){
-    console.log(id);
+    //console.log(id);
     var elem = document.getElementById(id);
-    console.log(elem)
+    //console.log(elem)
     elem.style.backgroundImage = 'none  ';
   }
 

@@ -3,8 +3,9 @@ import { Observable } from "rxjs/Observable";
 import { Subject } from "rxjs/Subject";
 import 'rxjs/add/operator/map';
 import { dataLink } from "../classes/datalink";
-import { Http,Headers } from '@angular/http';
-
+import { Http,Headers, RequestOptions } from '@angular/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
+declare var $:any;
 
 @Injectable()
 export class DatatransService {
@@ -16,8 +17,9 @@ export class DatatransService {
   public cardData:Array<any>;
   private logged:any;
   public sheds:any;
+  public aves:any;
 
-  constructor(public http: Http) {
+  constructor(public http: Http, public httpClient:HttpClient) {
     this.col = new Array<any>();
     this.home = new Array<any>();
     this.cardData = new Array<any>();
@@ -239,23 +241,27 @@ export class DatatransService {
     return this.navItems;
   }
 
-  login(user,pass){
+  
+
+  login(account){
+    
     
     var logged:any = "asdasd";
+    console.log("ACCOUNT",account)
+    let headers = new Headers();
+    headers.append( 'Content-Type', 'application/json; charset=utf-8;');
+    let optionss = new RequestOptions({ headers: headers });
+    let body = new HttpParams();
+    body.set('username',account.username);
+    body.set('password',account.password);
+    console.log(body)
     let promise = new Promise((resolve,reject) => {
-      this.http.post('http://localhost:80/api/login',body => JSON.stringify({username:user,password:pass}))
+      this.httpClient.post('http://localhost:80/api/login',JSON.stringify(account), {headers: new HttpHeaders().set('Content-Type', 'application/json')})
       .toPromise()
       .then(
         res=>
         {
-          logged = res.json()
-          if(logged.cookie){
-            console.log(logged)
-            this.logged = logged.cookie;
-          }else{
-            this.logged = false;
-          }
-          resolve();
+          resolve(res);
         },
         err => {
           console.log(err.message)
@@ -266,6 +272,7 @@ export class DatatransService {
     });
     console.log("wawawawat",promise)
     return promise;
+
   }
   getLogged(){
     console.log(this.logged)
@@ -292,7 +299,7 @@ export class DatatransService {
           console.log(res);
           dis.sheds = res;
           console.log(dis.sheds._body)
-          resolve();
+          resolve(res);
         },
         err => {
           console.log(err)
@@ -331,6 +338,157 @@ export class DatatransService {
     console.log("wawawawat",promise)
     return promise;
   }
+
+
+  upload(formdata){
+    
+    // var logged:any = "asdasd";
+    let promise = new Promise((resolve,reject) => {
+      this.http.post('http://localhost:80/api/updateData',formdata)
+      .toPromise()
+      .then(
+        res=>
+        {
+         console.log("DONE UPOLOAD")
+          resolve();
+        },
+        err => {
+          console.log(err.message)
+          reject(err);
+        }
+          
+      );
+    });
+    console.log("wawawawat",promise)
+    return promise;
+  }
+
+  
+
+  muni:any;
+
+  getMunicipalitiesSolo(muns){
+    var logged:any = "asdasd";
+    var dis = this;
+    var headers = new Headers();
+    // headers.append("Access-Control-Allow-Origin", "*");
+    let promise = new Promise((resolve,reject) => {
+      this.http.get('http://localhost/api/municipalities/'+muns,{
+        headers:headers
+      })
+      .toPromise()
+      .then(
+        res=>
+        {
+          dis.muni = res;
+          console.log(res)
+          resolve();
+        },
+        err => {
+          console.log(err)
+          reject(err);
+        }
+          
+      );
+    });
+    console.log("wawawawat",promise)
+    return promise;
+  }
+
+  getCountryAve(){
+    var logged:any = "asdasd";
+    var dis = this;
+    var headers = new Headers();
+    // headers.append("Access-Control-Allow-Origin", "*");
+    let promise = new Promise((resolve,reject) => {
+      this.http.get('http://localhost/api/countryAve',{
+        headers:headers
+      })
+      .toPromise()
+      .then(
+        res=>
+        {
+          dis.aves = res;
+          console.log(res)
+          resolve();
+        },
+        err => {
+          console.log(err)
+          reject(err);
+        }
+          
+      );
+    });
+    console.log("wawawawat",promise)
+    return promise;
+  }
+  regAve:any;
+  getRegionAve(){
+    var logged:any = "asdasd";
+    var dis = this;
+    var headers = new Headers();
+    // headers.append("Access-Control-Allow-Origin", "*");
+    let promise = new Promise((resolve,reject) => {
+      this.http.get('http://localhost/api/regionalAve',{
+        headers:headers
+      })
+      .toPromise()
+      .then(
+        res=>
+        {
+          dis.aves = res;
+          console.log(res)
+          resolve();
+        },
+        err => {
+          console.log(err)
+          reject(err);
+        }
+          
+      );
+    });
+    console.log("wawawawat",promise)
+    return promise;
+  }
+
+  getProvPerReg(region){
+    var logged:any = "asdasd";
+    var dis = this;
+    var headers = new Headers();
+    // headers.append("Access-Control-Allow-Origin", "*");
+    let promise = new Promise((resolve,reject) => {
+      this.http.get('http://localhost/api/provincesPerRegion/'+region,{
+        headers:headers
+      })
+      .toPromise()
+      .then(
+        res=>
+        {
+          dis.aves = res;
+          console.log(res)
+          resolve();
+        },
+        err => {
+          console.log(err)
+          reject(err);
+        }
+          
+      );
+    });
+    console.log("wawawawat",promise)
+    return promise;
+  }
+  
+  getMuns(){
+    console.log(JSON.parse(this.muni._body))
+    return JSON.parse(this.muni._body)
+  }
+
+  getAves(){
+    return JSON.parse(this.aves._body)
+  }
+
+  
 
   
   
